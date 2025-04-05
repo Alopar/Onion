@@ -1,6 +1,5 @@
 using System;
 using UnityEngine;
-using UnityEngine.Events;
 
 namespace Gameplay
 {
@@ -8,13 +7,15 @@ namespace Gameplay
     {
         #region FIELDS INSPECTOR
         [SerializeField] private float _healthMax;
-
-        [Space(10)]
-        [SerializeField] private UnityEvent _onDie;
         #endregion
 
         #region FIELDS PRIVATE
         private float _healthCurrent;
+        #endregion
+
+        #region EVENTS
+        public event Action<float, float> OnHealthChanged;
+        public event Action OnDeath;
         #endregion
 
         #region UNITY CALLBACKS
@@ -28,9 +29,10 @@ namespace Gameplay
         public void DealDamage(float damage)
         {
             _healthCurrent -= damage;
+            OnHealthChanged?.Invoke(_healthCurrent, _healthMax);
             if (_healthCurrent > 0) return;
 
-            _onDie.Invoke();
+            OnDeath?.Invoke();
         }
         #endregion
     }

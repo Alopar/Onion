@@ -23,6 +23,7 @@ namespace Gameplay
         {
             _buildingHealth = other.gameObject.GetComponentInParent<BuildingHealth>();
             if (_buildingHealth == null) return;
+            if (gameObject.CompareTag("EnemyFly") && !_buildingHealth.CompareTag("BuildingSupport")) return;
 
             _movement.enabled = false;
         }

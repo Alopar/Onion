@@ -1,9 +1,9 @@
+using System;
 using UnityEngine;
 
 namespace Gameplay
 {
-    [SelectionBase]
-    public class Core : MonoBehaviour
+    public class Destroyer : MonoBehaviour
     {
         #region FIELDS INSPECTOR
         [SerializeField] private BuildingHealth _health;
@@ -24,7 +24,7 @@ namespace Gameplay
         #region METHODS PRIVATE
         private void OnDeath()
         {
-            print("💥💥💥 CORE DESTROYED, GAME OVER! 💥💥💥");
+            Destroy(gameObject);
         }
         #endregion
     }
