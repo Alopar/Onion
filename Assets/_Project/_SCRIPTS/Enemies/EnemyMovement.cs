@@ -15,11 +15,12 @@ namespace Gameplay
         #region UNITY CALLBACKS
         private void Start()
         {
-            _core = FindAnyObjectByType<CoreHealth>().transform;
+            _core = FindAnyObjectByType<Core>().transform;
         }
 
         private void Update()
         {
+            if (_core == null) return;
             Move(_core.position - transform.position);
         }
         #endregion

@@ -8,6 +8,8 @@ namespace Gameplay
     {
         #region FIELDS INSPECTOR
         [SerializeField, Range(0, 10)] private float _speed = 5f;
+
+        [Space(10)]
         [SerializeField] private InputActionReference _inputAction;
         #endregion
 
