@@ -2,8 +2,13 @@
 %TAG !u! tag:unity3d.com,2011:
 --- !u!78 &1
 TagManager:
-  serializedVersion: 2
-  tags: []
+  serializedVersion: 3
+  tags:
+  - BuildingSupport
+  - BuildingDefence
+  - BuildingAttack
+  - EnemyGround
+  - EnemyFly
   layers:
   - Default
   - TransparentFX
@@ -41,3 +46,23 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Ground
+    uniqueID: 3251459407
+    locked: 0
+  - name: Buildings
+    uniqueID: 503459749
+    locked: 0
+  - name: Towers
+    uniqueID: 487136499
+    locked: 0
+  - name: EnemiesGround
+    uniqueID: 1215416949
+    locked: 0
+  - name: EnemiesFly
+    uniqueID: 1484345811
+    locked: 0
+  - name: Player
+    uniqueID: 3466405355
+    locked: 0
+  m_RenderingLayers:
+  - Default

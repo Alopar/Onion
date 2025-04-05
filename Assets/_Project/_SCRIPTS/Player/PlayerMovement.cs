@@ -4,24 +4,28 @@ using UnityEngine.InputSystem;
 
 namespace Gameplay
 {
-    public class Movement : MonoBehaviour
+    public class PlayerMovement : MonoBehaviour
     {
         #region FIELDS INSPECTOR
         [SerializeField, Range(0, 10)] private float _speed = 5f;
+
+        [Space(10)]
         [SerializeField] private InputActionReference _inputAction;
         #endregion
 
         #region UNITY CALLBACKS
         private void Update()
         {
-            Move(_inputAction.action.ReadValue<Vector2>());
+            var input = _inputAction.action.ReadValue<Vector2>();
+            var direction = new Vector2(input.x, input.y);
+            Move(direction);
         }
         #endregion
 
         #region METHODS PRIVATE
-        private void Move(Vector2 direction)
+        private void Move(Vector3 direction)
         {
-            transform.Translate(direction * _speed * Time.deltaTime);
+            transform.Translate(direction.normalized * (_speed * Time.deltaTime));
         }
         #endregion
     }
