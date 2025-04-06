@@ -181,8 +181,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1287188878845800259}
   - component: {fileID: 1738040079549573054}
-  - component: {fileID: 7418206323482728513}
+  - component: {fileID: -104170271605697184}
   - component: {fileID: 6083288080688921060}
+  - component: {fileID: 7418206323482728513}
   m_Layer: 0
   m_Name: Core
   m_TagString: BuildingSupport
@@ -219,7 +220,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _health: {fileID: 6083288080688921060}
---- !u!114 &7418206323482728513
+--- !u!114 &-104170271605697184
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -228,9 +229,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 8048559187957320196}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cf291aafb5f99454cbf1c8116cf4bdea, type: 3}
+  m_Script: {fileID: 11500000, guid: 5f457370122ae914ab835f4c50c1e5b8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _income: 100
+  _delay: 1
+  _multiplier: 1
 --- !u!114 &6083288080688921060
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -244,3 +248,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _healthMax: 1000
+--- !u!114 &7418206323482728513
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8048559187957320196}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cf291aafb5f99454cbf1c8116cf4bdea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
