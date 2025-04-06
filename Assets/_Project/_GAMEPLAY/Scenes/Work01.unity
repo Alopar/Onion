@@ -119,6 +119,67 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &34132223
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 34132225}
+  - component: {fileID: 34132224}
+  m_Layer: 0
+  m_Name: EnemyWaveManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!320 &34132224
+PlayableDirector:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 34132223}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_PlayableAsset: {fileID: 11400000, guid: 7ef15aafe0f5cfb4f8888e5b1fafd4b0, type: 2}
+  m_InitialState: 1
+  m_WrapMode: 2
+  m_DirectorUpdateMode: 1
+  m_InitialTime: 0
+  m_SceneBindings:
+  - key: {fileID: 0}
+    value: {fileID: 856310785}
+  - key: {fileID: 0}
+    value: {fileID: 0}
+  - key: {fileID: 0}
+    value: {fileID: 0}
+  - key: {fileID: -3978891012806805720, guid: 7ef15aafe0f5cfb4f8888e5b1fafd4b0, type: 2}
+    value: {fileID: 856310787}
+  - key: {fileID: -6820807534389802685, guid: 7ef15aafe0f5cfb4f8888e5b1fafd4b0, type: 2}
+    value: {fileID: 856310787}
+  m_ExposedReferences:
+    m_References:
+    - 42442b4f404ea6a48a1ac4884a0dc7af: {fileID: 856310785}
+    - c4820580b0a76f24784c6406abea496c: {fileID: 1305559069}
+--- !u!4 &34132225
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 34132223}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &118993412
 GameObject:
   m_ObjectHideFlags: 0
@@ -614,7 +675,7 @@ GameObject:
   m_Layer: 0
   m_Name: Spawner
   m_TagString: Untagged
-  m_Icon: {fileID: -5442936267250999957, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: 2800000, guid: 43397da06062889459dfb250a34f12bf, type: 3}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -646,7 +707,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _radius: 20
-  _enemyPrefab: {fileID: 6742927007855841246, guid: f1af8eeb91178d14e917f9e69a92998a, type: 3}
 --- !u!114 &856310788
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -662,6 +722,11 @@ MonoBehaviour:
   _precision: 90
   _color: {r: 1, g: 0, b: 0, a: 1}
   _objectWithRadius: {fileID: 856310785}
+--- !u!1 &1305559069 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8048559187957320196, guid: a1b8b3456867be145873f72f321b3e65, type: 3}
+  m_PrefabInstance: {fileID: 361540434372474872}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1593900355
 GameObject:
   m_ObjectHideFlags: 0
@@ -1442,9 +1507,10 @@ SceneRoots:
   - {fileID: 1036307412168485421}
   - {fileID: 8510757783545688904}
   - {fileID: 3556157930168267279}
+  - {fileID: 34132225}
+  - {fileID: 856310786}
   - {fileID: 361540434372474872}
   - {fileID: 2305717132307327644}
-  - {fileID: 856310786}
   - {fileID: 7199896315900629642}
   - {fileID: 1593900357}
   - {fileID: 1612049228}

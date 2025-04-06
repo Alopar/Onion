@@ -15,7 +15,7 @@ namespace Gameplay
         #region UNITY CALLBACKS
         private void Start()
         {
-            _core = FindAnyObjectByType<Core>().transform;
+            _core = FindAnyObjectByType<Core>()?.transform;
         }
 
         private void Update()
