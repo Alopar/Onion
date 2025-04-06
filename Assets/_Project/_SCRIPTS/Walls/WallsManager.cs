@@ -57,7 +57,7 @@ namespace Gameplay
             wall.SetDirection(direction);
             wall.Draw(_wallSegments, _wallAngle, nextWallDistance);
             wall.UpdateCollider(_colliderSegments);
-
+            if (wall is AttackWall attackWall) attackWall.CreateWeapons();
             _walls[direction].Add(wall);
             UpdateCreationPreviews();
             return (T)wall;

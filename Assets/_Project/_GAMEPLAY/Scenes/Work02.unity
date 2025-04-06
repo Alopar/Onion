@@ -519,6 +519,10 @@ PrefabInstance:
       value: WallsManager
       objectReference: {fileID: 0}
     - target: {fileID: 8203361518646047560, guid: 1a82b10d3c19d674abb2f24b15e5b6d6, type: 3}
+      propertyPath: _wallSegments
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 8203361518646047560, guid: 1a82b10d3c19d674abb2f24b15e5b6d6, type: 3}
       propertyPath: _colliderSegments
       value: 5
       objectReference: {fileID: 0}
