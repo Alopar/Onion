@@ -206,6 +206,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: EnemyWaveManager
       objectReference: {fileID: 0}
+    - target: {fileID: 5886450645514502032, guid: 0cec0a3c3fe0b12459fb022f7347fe68, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5949089547068732050, guid: 0cec0a3c3fe0b12459fb022f7347fe68, type: 3}
       propertyPath: m_SceneBindings.Array.data[3].value
       value: 
