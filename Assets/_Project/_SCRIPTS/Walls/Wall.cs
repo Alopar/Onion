@@ -1,12 +1,14 @@
-﻿using System.Collections.Generic;
+﻿using NaughtyAttributes;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace Gameplay
 {
     public abstract class Wall : MonoBehaviour
     {
-        [SerializeField] protected EdgeCollider2D _edgeCollider;
-        [SerializeField] protected LineRenderer _lineRenderer;
+        [SerializeField, Required] protected EdgeCollider2D _edgeCollider;
+        [SerializeField, Required] protected LineRenderer _lineRenderer;
+        [SerializeField, Required] protected BuildingHealth _health;
 
         protected WallDirection _wallDirection;
         public WallDirection WallDirection => _wallDirection;
@@ -36,6 +38,30 @@ namespace Gameplay
                 points.Add(_lineRenderer.GetPosition(Mathf.Clamp(Mathf.CeilToInt(i * step), 0, lineLength - 1)));
 
             _edgeCollider.SetPoints(points);
+        }
+
+        private void HealthChanged(float current, float max)
+        {
+            // TODO: change broken state
+        }
+
+        protected virtual void Destroy() =>
+            WallsManager.Instance.DestroyWall(this);
+
+        private void OnEnable()
+        {
+            if (_health == null) return;
+
+            _health.OnHealthChanged += HealthChanged;
+            _health.OnDeath += Destroy;
+        }
+
+        private void OnDisable()
+        {
+            if (_health == null) return;
+
+            _health.OnHealthChanged -= HealthChanged;
+            _health.OnDeath -= Destroy;
         }
     }
 }

@@ -49,6 +49,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _edgeCollider: {fileID: 2546934642740224895}
   _lineRenderer: {fileID: 8902701230639158643}
+  _health: {fileID: 6188143171455372143}
 --- !u!114 &6188143171455372143
 MonoBehaviour:
   m_ObjectHideFlags: 0

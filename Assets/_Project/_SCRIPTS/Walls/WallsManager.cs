@@ -63,6 +63,13 @@ namespace Gameplay
             return (T)wall;
         }
 
+        public void DestroyWall(Wall wall)
+        {
+            _walls[wall.WallDirection].Remove(wall);
+            Destroy(wall.gameObject);
+            UpdateCreationPreviews();
+        }
+
         private void InitWallsDictionary()
         {
             _walls.Add(WallDirection.TopLeft, new List<Wall>());
