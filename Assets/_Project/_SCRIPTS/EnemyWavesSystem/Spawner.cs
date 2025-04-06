@@ -21,12 +21,13 @@ namespace EnemyWavesSystem
         #endregion
 
         #region METHODS PUBLIC
-        public void SpawnWave(int wave, int number, float delay, Enemy prefab)
+        public void SpawnWave(int wave, int number, float delay, float radius, Enemy prefab)
         {
             if (!Application.isPlaying) return;
             if (_currentWave >= wave) return;
             Debug.Log("Start wave: " + wave);
 
+            _radius = radius;
             _currentWave = wave;
             StartCoroutine(SpawnEnemies(number, delay, prefab));
         }

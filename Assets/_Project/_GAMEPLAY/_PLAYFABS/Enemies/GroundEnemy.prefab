@@ -44,6 +44,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: GroundEnemy
       objectReference: {fileID: 0}
+    - target: {fileID: 6821742481780971992, guid: b6563ebf031e2334d81e17166036345a, type: 3}
+      propertyPath: m_TagString
+      value: EnemyGround
+      objectReference: {fileID: 0}
     - target: {fileID: 6935087670748715057, guid: b6563ebf031e2334d81e17166036345a, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0

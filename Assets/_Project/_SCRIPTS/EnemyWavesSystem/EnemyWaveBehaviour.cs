@@ -8,12 +8,13 @@ namespace EnemyWavesSystem
         public int wave;
         public int number;
         public float delay;
+        public float radius;
         public Enemy enemyPrefab;
 
         public override void ProcessFrame(Playable playable, FrameData info, object playerData)
         {
             var spawner = playerData as Spawner;
-            spawner.SpawnWave(wave, number, delay, enemyPrefab);
+            spawner.SpawnWave(wave, number, delay, radius, enemyPrefab);
         }
     }
 }

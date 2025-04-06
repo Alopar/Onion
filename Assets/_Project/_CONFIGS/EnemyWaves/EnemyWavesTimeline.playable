@@ -12,9 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e27769af492643798b7ac35c1ddf0a2c, type: 3}
   m_Name: EnemyWave(Clone)
   m_EditorClassIdentifier: 
-  wave: 4
-  number: 5
-  delay: 0.5
+  wave: 1
+  number: 3
+  delay: 1
+  radius: 20
   enemyPrefab: {fileID: 7554888202306409818, guid: 071d874872c9d0648a480cb248e99fbc, type: 3}
 --- !u!114 &-6820807534389802685
 MonoBehaviour:
@@ -38,10 +39,10 @@ MonoBehaviour:
   m_Children: []
   m_Clips:
   - m_Version: 1
-    m_Start: 5.816666666666666
+    m_Start: 120
     m_ClipIn: 0
-    m_Asset: {fileID: 7551653674111535415}
-    m_Duration: 5
+    m_Asset: {fileID: -3037207188535556430}
+    m_Duration: 30
     m_TimeScale: 1
     m_ParentTrack: {fileID: -6820807534389802685}
     m_EaseInDuration: 0
@@ -107,10 +108,10 @@ MonoBehaviour:
     m_PreExtrapolationTime: 0
     m_DisplayName: EnemyWave
   - m_Version: 1
-    m_Start: 14.1
+    m_Start: 180
     m_ClipIn: 0
-    m_Asset: {fileID: -9180852547621088544}
-    m_Duration: 5
+    m_Asset: {fileID: 6399100636961570517}
+    m_Duration: 30
     m_TimeScale: 1
     m_ParentTrack: {fileID: -6820807534389802685}
     m_EaseInDuration: 0
@@ -143,10 +144,70 @@ MonoBehaviour:
       m_RotationOrder: 4
     m_MixOutCurve:
       serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    m_BlendInCurveMode: 0
+    m_BlendOutCurveMode: 0
+    m_ExposedParameterNames: []
+    m_AnimationCurves: {fileID: 0}
+    m_Recordable: 0
+    m_PostExtrapolationMode: 0
+    m_PreExtrapolationMode: 0
+    m_PostExtrapolationTime: 0
+    m_PreExtrapolationTime: 0
+    m_DisplayName: EnemyWave
+  - m_Version: 1
+    m_Start: 240
+    m_ClipIn: 0
+    m_Asset: {fileID: -3929290700740156565}
+    m_Duration: 30
+    m_TimeScale: 1
+    m_ParentTrack: {fileID: -6820807534389802685}
+    m_EaseInDuration: 0
+    m_EaseOutDuration: 0
+    m_BlendInDuration: -1
+    m_BlendOutDuration: -1
+    m_MixInCurve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    m_MixOutCurve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    m_BlendInCurveMode: 0
+    m_BlendOutCurveMode: 0
+    m_ExposedParameterNames: []
+    m_AnimationCurves: {fileID: 0}
+    m_Recordable: 0
+    m_PostExtrapolationMode: 0
+    m_PreExtrapolationMode: 0
+    m_PostExtrapolationTime: 0
+    m_PreExtrapolationTime: 0
+    m_DisplayName: EnemyWave
+  - m_Version: 1
+    m_Start: 0
+    m_ClipIn: 0
+    m_Asset: {fileID: -9180852547621088544}
+    m_Duration: 30
+    m_TimeScale: 1
+    m_ParentTrack: {fileID: -6820807534389802685}
+    m_EaseInDuration: 0
+    m_EaseOutDuration: 0
+    m_BlendInDuration: -1
+    m_BlendOutDuration: -1
+    m_MixInCurve:
+      serializedVersion: 2
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 1
+        value: 0
         inSlope: 0
         outSlope: 0
         tangentMode: 0
@@ -155,13 +216,52 @@ MonoBehaviour:
         outWeight: 0
       - serializedVersion: 3
         time: 1
-        value: 0
+        value: 1
         inSlope: 0
         outSlope: 0
         tangentMode: 0
         weightedMode: 0
         inWeight: 0
         outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    m_MixOutCurve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    m_BlendInCurveMode: 0
+    m_BlendOutCurveMode: 0
+    m_ExposedParameterNames: []
+    m_AnimationCurves: {fileID: 0}
+    m_Recordable: 0
+    m_PostExtrapolationMode: 0
+    m_PreExtrapolationMode: 0
+    m_PostExtrapolationTime: 0
+    m_PreExtrapolationTime: 0
+    m_DisplayName: EnemyWave
+  - m_Version: 1
+    m_Start: 60
+    m_ClipIn: 0
+    m_Asset: {fileID: -393067119266014836}
+    m_Duration: 30
+    m_TimeScale: 1
+    m_ParentTrack: {fileID: -6820807534389802685}
+    m_EaseInDuration: 0
+    m_EaseOutDuration: 0
+    m_BlendInDuration: -1
+    m_BlendOutDuration: -1
+    m_MixInCurve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    m_MixOutCurve:
+      serializedVersion: 2
+      m_Curve: []
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
@@ -177,6 +277,23 @@ MonoBehaviour:
     m_DisplayName: EnemyWave
   m_Markers:
     m_Objects: []
+--- !u!114 &-6636104279654750844
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e27769af492643798b7ac35c1ddf0a2c, type: 3}
+  m_Name: EnemyWave(Clone)(Clone)(Clone)(Clone)
+  m_EditorClassIdentifier: 
+  wave: 5
+  number: 45
+  delay: 0.5
+  radius: 30
+  enemyPrefab: {fileID: 2117215015767839618, guid: f1af8eeb91178d14e917f9e69a92998a, type: 3}
 --- !u!114 &-6346972619884045717
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -215,10 +332,10 @@ MonoBehaviour:
   m_Children: []
   m_Clips:
   - m_Version: 1
-    m_Start: 2.25
+    m_Start: 0
     m_ClipIn: 0
     m_Asset: {fileID: 5190443676056248277}
-    m_Duration: 5
+    m_Duration: 30
     m_TimeScale: 1
     m_ParentTrack: {fileID: -3978891012806805720}
     m_EaseInDuration: 0
@@ -284,10 +401,10 @@ MonoBehaviour:
     m_PreExtrapolationTime: 0
     m_DisplayName: EnemyWave
   - m_Version: 1
-    m_Start: 9.1
+    m_Start: 60
     m_ClipIn: 0
-    m_Asset: {fileID: -1988076642729458446}
-    m_Duration: 5
+    m_Asset: {fileID: 8592819189072962363}
+    m_Duration: 30
     m_TimeScale: 1
     m_ParentTrack: {fileID: -3978891012806805720}
     m_EaseInDuration: 0
@@ -353,10 +470,148 @@ MonoBehaviour:
     m_PreExtrapolationTime: 0
     m_DisplayName: EnemyWave
   - m_Version: 1
-    m_Start: 19.1
+    m_Start: 120
     m_ClipIn: 0
-    m_Asset: {fileID: 1537677386861575011}
-    m_Duration: 5
+    m_Asset: {fileID: 5340935010246247429}
+    m_Duration: 30
+    m_TimeScale: 1
+    m_ParentTrack: {fileID: -3978891012806805720}
+    m_EaseInDuration: 0
+    m_EaseOutDuration: 0
+    m_BlendInDuration: -1
+    m_BlendOutDuration: -1
+    m_MixInCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    m_MixOutCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    m_BlendInCurveMode: 0
+    m_BlendOutCurveMode: 0
+    m_ExposedParameterNames: []
+    m_AnimationCurves: {fileID: 0}
+    m_Recordable: 0
+    m_PostExtrapolationMode: 0
+    m_PreExtrapolationMode: 0
+    m_PostExtrapolationTime: 0
+    m_PreExtrapolationTime: 0
+    m_DisplayName: EnemyWave
+  - m_Version: 1
+    m_Start: 180
+    m_ClipIn: 0
+    m_Asset: {fileID: -1890752527119629015}
+    m_Duration: 30
+    m_TimeScale: 1
+    m_ParentTrack: {fileID: -3978891012806805720}
+    m_EaseInDuration: 0
+    m_EaseOutDuration: 0
+    m_BlendInDuration: -1
+    m_BlendOutDuration: -1
+    m_MixInCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    m_MixOutCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    m_BlendInCurveMode: 0
+    m_BlendOutCurveMode: 0
+    m_ExposedParameterNames: []
+    m_AnimationCurves: {fileID: 0}
+    m_Recordable: 0
+    m_PostExtrapolationMode: 0
+    m_PreExtrapolationMode: 0
+    m_PostExtrapolationTime: 0
+    m_PreExtrapolationTime: 0
+    m_DisplayName: EnemyWave
+  - m_Version: 1
+    m_Start: 240
+    m_ClipIn: 0
+    m_Asset: {fileID: -6636104279654750844}
+    m_Duration: 30
     m_TimeScale: 1
     m_ParentTrack: {fileID: -3978891012806805720}
     m_EaseInDuration: 0
@@ -423,7 +678,7 @@ MonoBehaviour:
     m_DisplayName: EnemyWave
   m_Markers:
     m_Objects: []
---- !u!114 &-1988076642729458446
+--- !u!114 &-3929290700740156565
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -433,12 +688,64 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e27769af492643798b7ac35c1ddf0a2c, type: 3}
-  m_Name: EnemyWave(Clone)
+  m_Name: EnemyWave(Clone)(Clone)(Clone)(Clone)(Clone)
+  m_EditorClassIdentifier: 
+  wave: 5
+  number: 9
+  delay: 1
+  radius: 30
+  enemyPrefab: {fileID: 7554888202306409818, guid: 071d874872c9d0648a480cb248e99fbc, type: 3}
+--- !u!114 &-3037207188535556430
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e27769af492643798b7ac35c1ddf0a2c, type: 3}
+  m_Name: EnemyWave(Clone)(Clone)(Clone)
   m_EditorClassIdentifier: 
   wave: 3
-  number: 20
+  number: 3
+  delay: 1
+  radius: 25
+  enemyPrefab: {fileID: 7554888202306409818, guid: 071d874872c9d0648a480cb248e99fbc, type: 3}
+--- !u!114 &-1890752527119629015
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e27769af492643798b7ac35c1ddf0a2c, type: 3}
+  m_Name: EnemyWave(Clone)(Clone)(Clone)
+  m_EditorClassIdentifier: 
+  wave: 4
+  number: 30
   delay: 0.5
+  radius: 25
   enemyPrefab: {fileID: 2117215015767839618, guid: f1af8eeb91178d14e917f9e69a92998a, type: 3}
+--- !u!114 &-393067119266014836
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e27769af492643798b7ac35c1ddf0a2c, type: 3}
+  m_Name: EnemyWave(Clone)(Clone)
+  m_EditorClassIdentifier: 
+  wave: 2
+  number: 6
+  delay: 1
+  radius: 20
+  enemyPrefab: {fileID: 7554888202306409818, guid: 071d874872c9d0648a480cb248e99fbc, type: 3}
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -461,22 +768,6 @@ MonoBehaviour:
     m_ScenePreview: 1
   m_DurationMode: 0
   m_MarkerTrack: {fileID: 0}
---- !u!114 &1537677386861575011
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e27769af492643798b7ac35c1ddf0a2c, type: 3}
-  m_Name: EnemyWave(Clone)(Clone)
-  m_EditorClassIdentifier: 
-  wave: 5
-  number: 50
-  delay: 0.1
-  enemyPrefab: {fileID: 2117215015767839618, guid: f1af8eeb91178d14e917f9e69a92998a, type: 3}
 --- !u!114 &5190443676056248277
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -490,8 +781,26 @@ MonoBehaviour:
   m_Name: EnemyWave
   m_EditorClassIdentifier: 
   wave: 1
-  number: 10
-  delay: 1
+  number: 15
+  delay: 0.5
+  radius: 20
+  enemyPrefab: {fileID: 2117215015767839618, guid: f1af8eeb91178d14e917f9e69a92998a, type: 3}
+--- !u!114 &5340935010246247429
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e27769af492643798b7ac35c1ddf0a2c, type: 3}
+  m_Name: EnemyWave(Clone)(Clone)
+  m_EditorClassIdentifier: 
+  wave: 3
+  number: 15
+  delay: 0.5
+  radius: 25
   enemyPrefab: {fileID: 2117215015767839618, guid: f1af8eeb91178d14e917f9e69a92998a, type: 3}
 --- !u!114 &6092147628061530409
 MonoBehaviour:
@@ -509,7 +818,7 @@ MonoBehaviour:
   m_Retroactive: 0
   m_EmitOnce: 0
   m_Asset: {fileID: 0}
---- !u!114 &7551653674111535415
+--- !u!114 &6399100636961570517
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -519,9 +828,27 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e27769af492643798b7ac35c1ddf0a2c, type: 3}
-  m_Name: EnemyWave
+  m_Name: EnemyWave(Clone)(Clone)(Clone)(Clone)
+  m_EditorClassIdentifier: 
+  wave: 4
+  number: 6
+  delay: 1
+  radius: 25
+  enemyPrefab: {fileID: 7554888202306409818, guid: 071d874872c9d0648a480cb248e99fbc, type: 3}
+--- !u!114 &8592819189072962363
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e27769af492643798b7ac35c1ddf0a2c, type: 3}
+  m_Name: EnemyWave(Clone)
   m_EditorClassIdentifier: 
   wave: 2
-  number: 5
-  delay: 1
-  enemyPrefab: {fileID: 7554888202306409818, guid: 071d874872c9d0648a480cb248e99fbc, type: 3}
+  number: 30
+  delay: 0.5
+  radius: 20
+  enemyPrefab: {fileID: 2117215015767839618, guid: f1af8eeb91178d14e917f9e69a92998a, type: 3}
