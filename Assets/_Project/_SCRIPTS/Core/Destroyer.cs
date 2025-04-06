@@ -5,11 +5,16 @@ namespace Gameplay
 {
     public class Destroyer : MonoBehaviour
     {
-        #region FIELDS INSPECTOR
-        [SerializeField] private BuildingHealth _health;
+        #region FIELDS PRIVATE
+        private IHealth _health;
         #endregion
 
         #region UNITY CALLBACKS
+        private void Awake()
+        {
+            _health = gameObject.GetComponent<IHealth>();
+        }
+
         private void OnEnable()
         {
             _health.OnDeath += OnDeath;
