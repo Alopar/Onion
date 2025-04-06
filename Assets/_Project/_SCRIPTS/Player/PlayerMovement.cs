@@ -10,22 +10,56 @@ namespace Gameplay
         [SerializeField, Range(0, 10)] private float _speed = 5f;
 
         [Space(10)]
-        [SerializeField] private InputActionReference _inputAction;
+        [SerializeField] private InputActionReference _moveInputAction;
+        [SerializeField] private InputActionReference _lookInputAction;
+
+        [Space(10)]
+        [SerializeField] private Transform _view;
+        #endregion
+
+        #region FIELDS PRIVATE
+        private Camera _camera;
         #endregion
 
         #region UNITY CALLBACKS
+        private void Start()
+        {
+            _camera = Camera.main;
+        }
+
         private void Update()
         {
-            var input = _inputAction.action.ReadValue<Vector2>();
-            var direction = new Vector2(input.x, input.y);
-            Move(direction);
+            Move();
+            Rotate();
         }
         #endregion
 
         #region METHODS PRIVATE
-        private void Move(Vector3 direction)
+        private void Move()
         {
-            transform.Translate(direction.normalized * (_speed * Time.deltaTime));
+            var input = _moveInputAction.action.ReadValue<Vector2>();
+            var direction = new Vector3(input.x, input.y, 0f);
+            transform.position += direction.normalized * (_speed * Time.deltaTime);
+        }
+
+        private void Rotate()
+        {
+            switch (GetLookDirection().x)
+            {
+                case < 0: _view.rotation = Quaternion.Euler(0f, 180f, 0f);
+                    break;
+                default: _view.rotation = Quaternion.Euler(0f, 0f, 0f);
+                    break;
+            }
+        }
+
+        private Vector2 GetLookDirection()
+        {
+            var playerAtScreen = _camera.WorldToScreenPoint(transform.position);
+            var cameraPosition = new Vector2(playerAtScreen.x, playerAtScreen.y);
+            var mousePosition = _lookInputAction.action.ReadValue<Vector2>();
+
+            return (mousePosition - cameraPosition).normalized;;
         }
         #endregion
     }

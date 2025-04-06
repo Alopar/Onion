@@ -58,6 +58,9 @@ TagManager:
   - name: EnemiesGround
     uniqueID: 1215416949
     locked: 0
+  - name: Projectiles
+    uniqueID: 1543134597
+    locked: 0
   - name: EnemiesFly
     uniqueID: 1484345811
     locked: 0

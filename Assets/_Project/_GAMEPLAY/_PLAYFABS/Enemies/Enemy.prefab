@@ -181,8 +181,10 @@ GameObject:
   m_Component:
   - component: {fileID: 6935087670748715057}
   - component: {fileID: -1232620603273019331}
+  - component: {fileID: -6916650760614379563}
   - component: {fileID: -8357079279995346652}
   - component: {fileID: 3321037084730334305}
+  - component: {fileID: 2082991366338945011}
   - component: {fileID: 16731819384401279}
   m_Layer: 0
   m_Name: Enemy
@@ -219,6 +221,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 01e540dc390cc574cb77cd4a8b7d22c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &-6916650760614379563
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6821742481780971992}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 298088845a462dd4bb42da5fe2bb465e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _healthMax: 10
 --- !u!114 &-8357079279995346652
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -247,6 +262,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _speed: 3
+  _view: {fileID: 8429040547201769053}
+--- !u!114 &2082991366338945011
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6821742481780971992}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cf291aafb5f99454cbf1c8116cf4bdea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!50 &16731819384401279
 Rigidbody2D:
   serializedVersion: 5

@@ -6,8 +6,8 @@ namespace Gameplay
     public class EnemyAttack : MonoBehaviour
     {
         #region FIELDS INSPECTOR
-        [SerializeField, Range(0, 10)] private float _damage;
-        [SerializeField, Range(0, 1)] private float _cooldown;
+        [SerializeField, Range(0, 999)] private float _damage;
+        [SerializeField, Range(0, 99)] private float _cooldown;
 
         [Space(10)]
         [SerializeField] private EnemyMovement _movement;

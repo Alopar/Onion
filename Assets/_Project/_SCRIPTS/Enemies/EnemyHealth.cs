@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace Gameplay
 {
-    public class BuildingHealth : MonoBehaviour, IHealth
+    public class EnemyHealth : MonoBehaviour, IHealth
     {
         #region FIELDS INSPECTOR
         [SerializeField] private float _healthMax;

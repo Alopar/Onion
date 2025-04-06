@@ -6,6 +6,9 @@ namespace Gameplay
     {
         #region FIELDS INSPECTOR
         [SerializeField, Range(0, 10)] private float _speed = 3f;
+
+        [Space(10)]
+        [SerializeField] private Transform _view;
         #endregion
 
         #region FIELDS PRIVATE
@@ -36,8 +39,13 @@ namespace Gameplay
 
         private void Rotate(Vector3 direction)
         {
-            var angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
-            transform.rotation = Quaternion.Euler(0f, 0f, angle);
+            switch (direction.x)
+            {
+                case < 0: _view.rotation = Quaternion.Euler(0f, 180f, 0f);
+                    break;
+                default: _view.rotation = Quaternion.Euler(0f, 0f, 0f);
+                    break;
+            }
         }
         #endregion
     }
