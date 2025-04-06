@@ -23,6 +23,8 @@ namespace Gameplay
         private Dictionary<WallDirection, List<Wall>> _walls = new();
         private Dictionary<WallDirection, WallPreview> _previews = new();
 
+        public WallsProgress WallsProgress => _wallsProgress;
+
         public static WallsManager Instance { get; private set; }
 
         private void Awake()

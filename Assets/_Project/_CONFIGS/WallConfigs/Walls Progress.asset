@@ -13,3 +13,4 @@ MonoBehaviour:
   m_Name: Walls Progress
   m_EditorClassIdentifier: 
   AttackWallsWeapons: 0100000002000000030000000300000004000000
+  Costs: 050000000a00000007000000
