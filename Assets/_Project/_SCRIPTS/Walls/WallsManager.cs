@@ -10,6 +10,7 @@ namespace Gameplay
         [SerializeField, Required] private AttackWall _attackWallPrefab;
         [SerializeField, Required] private ProduceWall _produceWallPrefab;
         [SerializeField, Required] private WallPreview _wallPreviewPrefab;
+        [SerializeField, Required] private WallsProgress _wallsProgress;
         [SerializeField, Required] private Transform _wallsContainer;
 
         [SerializeField] private float _offsetFromCenter;
@@ -54,10 +55,10 @@ namespace Gameplay
             wall.transform.SetParent(_wallsContainer);
             float nextWallDistance = GetNextWallDistance(direction);
             wall.transform.eulerAngles = WallsSettings.Instance.GetWallAngle(direction);
-            wall.SetDirection(direction);
+            wall.Init(direction, _walls[direction].Count * 2 + (direction.IsCorner() ? 1 : 0), _wallsProgress);
             wall.Draw(_wallSegments, _wallAngle, nextWallDistance);
             wall.UpdateCollider(_colliderSegments);
-            if (wall is AttackWall attackWall) attackWall.CreateWeapons(_wallAngle, nextWallDistance);
+            if (wall is AttackWall attackWall) attackWall.CreateWeapons(_wallAngle, nextWallDistance, _wallsProgress);
             _walls[direction].Add(wall);
             UpdateCreationPreviews();
             return (T)wall;
@@ -104,7 +105,7 @@ namespace Gameplay
             
             float nextWallDistance = GetNextWallDistance(direction);
             preview.transform.eulerAngles = WallsSettings.Instance.GetWallAngle(direction);
-            preview.SetDirection(direction);
+            preview.Init(direction, _walls[direction].Count * 2 + (direction.IsCorner() ? 1 : 0), _wallsProgress);
             preview.Draw(_wallSegments, _wallAngle, nextWallDistance);
             preview.UpdateCollider(_colliderSegments);
 

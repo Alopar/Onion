@@ -6,8 +6,8 @@ namespace Gameplay
     public class AttackWall : Wall
     {
         [SerializeField] private WallWeapon _wallWeaponPrefab;
-        [SerializeField] private int _weaponsCount;
 
+        private int _weaponsCount;
         private List<WallWeapon> _weapons = new();
 
         private void Update()
@@ -16,8 +16,9 @@ namespace Gameplay
                 weapon.Shoot(_wallDirection);
         }
 
-        public void CreateWeapons(float angle, float radius)
+        public void CreateWeapons(float angle, float radius, WallsProgress wallsProgress)
         {
+            _weaponsCount = wallsProgress.GetWallsCount(_wallRing);
             angle = angle / 180;
             if (_weaponsCount % 2 == 1)
             {

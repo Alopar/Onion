@@ -48,9 +48,11 @@ MonoBehaviour:
   _attackWallPrefab: {fileID: 8301060421115171016, guid: 07b96390af472c341b931185eabe4c75, type: 3}
   _produceWallPrefab: {fileID: 2427855821824593018, guid: a96f45e391a77c842af21057e4fc13ad, type: 3}
   _wallPreviewPrefab: {fileID: 3735533706482615867, guid: 6cb974ff8a700304a9b5847fc8c9edc7, type: 3}
+  _wallsProgress: {fileID: 11400000, guid: 3350a33b5e02318448ab06a823a65ea3, type: 2}
   _wallsContainer: {fileID: 426659051780221160}
-  _offsetFromCenter: 1.5
+  _offsetFromCenter: 3
   _offsetBetweenWalls: 0.5
   _defaultWallThickness: 1
   _wallSegments: 20
   _wallAngle: 90
+  _colliderSegments: 5

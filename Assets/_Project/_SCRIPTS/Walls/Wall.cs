@@ -13,10 +13,15 @@ namespace Gameplay
         [SerializeField] protected GameObject _tower2;
 
         protected WallDirection _wallDirection;
+        protected int _wallRing;
+
         public WallDirection WallDirection => _wallDirection;
 
-        public void SetDirection(WallDirection direction) =>
+        public void Init(WallDirection direction, int ring, WallsProgress wallsProgress)
+        {
             _wallDirection = direction;
+            _wallRing = ring;
+        }
 
         public void Draw(int segmentsCount, float angle, float radius)
         {
