@@ -1,7 +1,4 @@
-﻿using NaughtyAttributes;
-using UnityEngine;
-
-namespace Gameplay
+﻿namespace Gameplay
 {
     public class AttackWall : Wall
     {

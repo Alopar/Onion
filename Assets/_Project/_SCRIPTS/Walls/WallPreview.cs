@@ -1,6 +1,4 @@
-﻿using UnityEngine;
-
-namespace Gameplay
+﻿namespace Gameplay
 {
     public class WallPreview : Wall
     {
@@ -21,12 +19,13 @@ namespace Gameplay
 
         private void OnMouseDown()
         {
-            int rand = Random.Range(0, 3);
-            if (rand == 0)
+            WallType wallToCreate = WallCreator.Instance.SelectedWall;
+
+            if (wallToCreate == WallType.Attack)
                 WallsManager.Instance.CreateWall<AttackWall>(WallDirection);
-            if (rand == 1)
+            if (wallToCreate == WallType.Protect)
                 WallsManager.Instance.CreateWall<ProtectWall>(WallDirection);
-            if (rand == 2)
+            if (wallToCreate == WallType.Produce)
                 WallsManager.Instance.CreateWall<ProduceWall>(WallDirection);
         }
     }
