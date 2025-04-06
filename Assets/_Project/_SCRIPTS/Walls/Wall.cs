@@ -32,12 +32,12 @@ namespace Gameplay
 
             if (_tower1 == null || _tower2 == null) return;
 
-            float towerAngle = angle * Mathf.PI * 0.5f / segmentsCount;
+            float towerAngle = 0;
             float towerX = Mathf.Cos(towerAngle) * radius;
             float towerY = Mathf.Sin(towerAngle) * radius;
             _tower1.transform.localPosition = new Vector3(towerX, towerY, 0);
 
-            towerAngle = angle * Mathf.PI * (segmentsCount + 0.5f) / segmentsCount;
+            towerAngle = angle * Mathf.PI;
             towerX = Mathf.Cos(towerAngle) * radius;
             towerY = Mathf.Sin(towerAngle) * radius;
             _tower2.transform.localPosition = new Vector3(towerX, towerY, 0);

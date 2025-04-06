@@ -16,20 +16,20 @@ namespace Gameplay
                 weapon.Shoot(_wallDirection);
         }
 
-        public void CreateWeapons()
+        public void CreateWeapons(float angle, float radius)
         {
-            int lineLength = _lineRenderer.positionCount;
-
-
+            angle = angle / 180;
             if (_weaponsCount % 2 == 1)
             {
-                float step = (lineLength - 1f) / _weaponsCount;
+                float step = angle * Mathf.PI / _weaponsCount;
                 int centerIndex = (_weaponsCount - 1) / 2;
-                int center = (lineLength) / 2;
+                float center = angle * Mathf.PI / 2;
 
                 for (int i = 0; i < _weaponsCount; i++)
                 {
-                    Vector3 position = _lineRenderer.GetPosition((int)(center + (i - centerIndex) * step));
+                    float x = Mathf.Cos(center + (i - centerIndex) * step) * radius;
+                    float y = Mathf.Sin(center + (i - centerIndex) * step) * radius;
+                    Vector3 position = new Vector3(x, y, 0);
                     WallWeapon weapon = Instantiate(_wallWeaponPrefab, transform);
                     weapon.transform.localPosition = position;
                     Vector3 lookDirection = transform.position - weapon.transform.position;
@@ -39,12 +39,15 @@ namespace Gameplay
             }
             else
             {
-                float step = (lineLength - 1f) / (_weaponsCount);
+                float step = angle * Mathf.PI / _weaponsCount;
                 float startOffset = step / 2f;
 
                 for (int i = 0; i < _weaponsCount; i++)
                 {
-                    Vector3 position = _lineRenderer.GetPosition(Mathf.CeilToInt((startOffset + i * step)));
+                    float x = Mathf.Cos(startOffset + i * step) * radius;
+                    float y = Mathf.Sin(startOffset + i * step) * radius;
+                    Vector3 position = new Vector3(x, y, 0);
+
                     WallWeapon weapon = Instantiate(_wallWeaponPrefab, transform);
                     weapon.transform.localPosition = position;
 
