@@ -15,6 +15,7 @@ namespace Gameplay
 
         [Space(10)]
         [SerializeField] private Transform _view;
+        [SerializeField] private Animator _animator;
         #endregion
 
         #region FIELDS PRIVATE
@@ -38,6 +39,13 @@ namespace Gameplay
         private void Move()
         {
             var input = _moveInputAction.action.ReadValue<Vector2>();
+            if (input == Vector2.zero)
+            {
+                _animator.SetBool("IsMoved", false);
+                return;
+            }
+
+            _animator.SetBool("IsMoved", true);
             var direction = new Vector3(input.x, input.y, 0f);
             transform.position += direction.normalized * (_speed * Time.deltaTime);
         }
