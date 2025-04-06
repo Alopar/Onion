@@ -1,0 +1,56 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &6003572757862004482
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 426659051780221160}
+  - component: {fileID: 8203361518646047560}
+  m_Layer: 0
+  m_Name: WallsManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &426659051780221160
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6003572757862004482}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8203361518646047560
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6003572757862004482}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a110243a5551d214b8e625bfdf6525b3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _protectWallPrefab: {fileID: 8337261472986896989, guid: b6d4513eb0be68a49b29716784ba46f8, type: 3}
+  _attackWallPrefab: {fileID: 8301060421115171016, guid: 07b96390af472c341b931185eabe4c75, type: 3}
+  _produceWallPrefab: {fileID: 2427855821824593018, guid: a96f45e391a77c842af21057e4fc13ad, type: 3}
+  _wallPreviewPrefab: {fileID: 3735533706482615867, guid: 6cb974ff8a700304a9b5847fc8c9edc7, type: 3}
+  _wallsContainer: {fileID: 426659051780221160}
+  _offsetFromCenter: 1.5
+  _offsetBetweenWalls: 0.5
+  _defaultWallThickness: 1
+  _wallSegments: 20
+  _wallAngle: 90

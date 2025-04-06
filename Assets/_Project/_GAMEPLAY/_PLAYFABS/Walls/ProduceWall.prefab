@@ -149,7 +149,8 @@ GameObject:
   m_Component:
   - component: {fileID: 7614202220689233076}
   - component: {fileID: 2427855821824593018}
-  - component: {fileID: 7929436389648283149}
+  - component: {fileID: 3210444903575156593}
+  - component: {fileID: 8065042113959217136}
   m_Layer: 0
   m_Name: ProduceWall
   m_TagString: BuildingSupport
@@ -185,15 +186,31 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1d7081345a77d9146b51c876632b1e7e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _meshCollider: {fileID: 7929436389648283149}
+  _edgeCollider: {fileID: 8065042113959217136}
   _lineRenderer: {fileID: 6525852136387062775}
---- !u!64 &7929436389648283149
-MeshCollider:
+--- !u!114 &3210444903575156593
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3606530664989510454}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e054489f988a7604badbb1727449fb34, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _healthMax: 10
+--- !u!68 &8065042113959217136
+EdgeCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3606530664989510454}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -202,10 +219,28 @@ MeshCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 0}
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: 0}
+  m_EdgeRadius: 0.4
+  m_Points:
+  - {x: -0.5, y: 0}
+  - {x: 0.5, y: 0}
+  m_AdjacentStartPoint: {x: 0, y: 0}
+  m_AdjacentEndPoint: {x: 0, y: 0}
+  m_UseAdjacentStartPoint: 0
+  m_UseAdjacentEndPoint: 0

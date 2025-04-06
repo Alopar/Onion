@@ -10,7 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 183591369088646812}
   - component: {fileID: 8337261472986896989}
-  - component: {fileID: 8074322215804712153}
+  - component: {fileID: 1686513040509352616}
+  - component: {fileID: 8906710387772924766}
   m_Layer: 0
   m_Name: ProtectWall
   m_TagString: BuildingDefence
@@ -46,15 +47,31 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0656ac0fbbe817943ad57ff005e1791d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _meshCollider: {fileID: 8074322215804712153}
+  _edgeCollider: {fileID: 8906710387772924766}
   _lineRenderer: {fileID: 118690263151512930}
---- !u!64 &8074322215804712153
-MeshCollider:
+--- !u!114 &1686513040509352616
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2205061776303320260}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e054489f988a7604badbb1727449fb34, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _healthMax: 20
+--- !u!68 &8906710387772924766
+EdgeCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2205061776303320260}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -63,13 +80,31 @@ MeshCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 0}
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: 0}
+  m_EdgeRadius: 0.4
+  m_Points:
+  - {x: -0.5, y: 0}
+  - {x: 0.5, y: 0}
+  m_AdjacentStartPoint: {x: 0, y: 0}
+  m_AdjacentEndPoint: {x: 0, y: 0}
+  m_UseAdjacentStartPoint: 0
+  m_UseAdjacentEndPoint: 0
 --- !u!1 &8357361627727605538
 GameObject:
   m_ObjectHideFlags: 0

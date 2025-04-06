@@ -17,6 +17,7 @@ namespace Gameplay
         [SerializeField] private float _defaultWallThickness;
         [SerializeField] private int _wallSegments;
         [SerializeField] private float _wallAngle;
+        [SerializeField] private int _colliderSegments;
 
         private Dictionary<WallDirection, List<Wall>> _walls = new();
         private Dictionary<WallDirection, WallPreview> _previews = new();
@@ -55,7 +56,7 @@ namespace Gameplay
             wall.transform.eulerAngles = WallsSettings.Instance.GetWallAngle(direction);
             wall.SetDirection(direction);
             wall.Draw(_wallSegments, _wallAngle, nextWallDistance);
-            wall.UpdateCollider();
+            wall.UpdateCollider(_colliderSegments);
 
             _walls[direction].Add(wall);
             UpdateCreationPreviews();
@@ -98,7 +99,7 @@ namespace Gameplay
             preview.transform.eulerAngles = WallsSettings.Instance.GetWallAngle(direction);
             preview.SetDirection(direction);
             preview.Draw(_wallSegments, _wallAngle, nextWallDistance);
-            preview.UpdateCollider();
+            preview.UpdateCollider(_colliderSegments);
 
             if (_previews.TryGetValue(direction, out WallPreview lastPreview))
             {

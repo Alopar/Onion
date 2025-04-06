@@ -1,10 +1,11 @@
-﻿using UnityEngine;
+﻿using System.Collections.Generic;
+using UnityEngine;
 
 namespace Gameplay
 {
     public abstract class Wall : MonoBehaviour
     {
-        [SerializeField] protected MeshCollider _meshCollider;
+        [SerializeField] protected EdgeCollider2D _edgeCollider;
         [SerializeField] protected LineRenderer _lineRenderer;
 
         protected WallDirection _wallDirection;
@@ -26,11 +27,15 @@ namespace Gameplay
             }
         }
 
-        public void UpdateCollider()
+        public void UpdateCollider(int segmentsCount)
         {
-            Mesh mesh = new Mesh();
-            _lineRenderer.BakeMesh(mesh);
-            _meshCollider.sharedMesh = mesh;
+            List<Vector2> points = new(segmentsCount);
+            int lineLength = _lineRenderer.positionCount;
+            float step = (lineLength - 1) / (segmentsCount - 1);
+            for (int i = 0; i <= segmentsCount; i++)
+                points.Add(_lineRenderer.GetPosition(Mathf.Clamp(Mathf.CeilToInt(i * step), 0, lineLength - 1)));
+
+            _edgeCollider.SetPoints(points);
         }
     }
 }
