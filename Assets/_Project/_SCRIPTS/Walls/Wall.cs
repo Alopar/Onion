@@ -8,7 +8,9 @@ namespace Gameplay
     {
         [SerializeField, Required] protected EdgeCollider2D _edgeCollider;
         [SerializeField, Required] protected LineRenderer _lineRenderer;
-        [SerializeField, Required] protected BuildingHealth _health;
+        [SerializeField] protected BuildingHealth _health;
+        [SerializeField] protected GameObject _tower1;
+        [SerializeField] protected GameObject _tower2;
 
         protected WallDirection _wallDirection;
         public WallDirection WallDirection => _wallDirection;
@@ -27,6 +29,18 @@ namespace Gameplay
                 float y = Mathf.Sin(localAngle) * radius;
                 _lineRenderer.SetPosition(i, new Vector3(x, y, 0f));
             }
+
+            if (_tower1 == null || _tower2 == null) return;
+
+            float towerAngle = angle * Mathf.PI * 0.5f / segmentsCount;
+            float towerX = Mathf.Cos(towerAngle) * radius;
+            float towerY = Mathf.Sin(towerAngle) * radius;
+            _tower1.transform.localPosition = new Vector3(towerX, towerY, 0);
+
+            towerAngle = angle * Mathf.PI * (segmentsCount + 0.5f) / segmentsCount;
+            towerX = Mathf.Cos(towerAngle) * radius;
+            towerY = Mathf.Sin(towerAngle) * radius;
+            _tower2.transform.localPosition = new Vector3(towerX, towerY, 0);
         }
 
         public void UpdateCollider(int segmentsCount)
