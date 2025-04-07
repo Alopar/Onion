@@ -1001,9 +1001,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7c307d3c1d128724eafb2e97e5e7058b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _produceWallSelectedImage: {fileID: 0}
-  _attackWallSelectedImage: {fileID: 0}
-  _protectWallSelectedImage: {fileID: 0}
+  _produceWallSelectedImage: {fileID: 3661717668444326828}
+  _attackWallSelectedImage: {fileID: 4263890789540674895}
+  _protectWallSelectedImage: {fileID: 8917517931102854466}
 --- !u!1 &7938004895291975333
 GameObject:
   m_ObjectHideFlags: 0
