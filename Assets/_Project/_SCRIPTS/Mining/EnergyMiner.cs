@@ -9,8 +9,13 @@ namespace Gameplay
         #region FIELDS INSPECTOR
         [SerializeField] private int _income;
         [SerializeField] private float _delay;
-        [SerializeField] private float _multiplier;
         #endregion
+
+        public void SetIncome(int income) =>
+            _income = income;
+
+        public void SetCooldown(float cooldown) =>
+            _delay = cooldown;
 
         #region UNITY CALLBACKS
         private void Start()
@@ -19,12 +24,6 @@ namespace Gameplay
         }
         #endregion
 
-        #region METHODS PUBLIC
-        public void SetMultiplier(float value)
-        {
-            _multiplier = value;
-        }
-        #endregion
 
         #region COROUTINES
         private IEnumerator EnergyProduction()
@@ -32,7 +31,7 @@ namespace Gameplay
             while (true)
             {
                 yield return new WaitForSeconds(_delay);
-                ResourcesManager.Instance.IncreaseEnergy((int)(_income * _multiplier));
+                ResourcesManager.Instance.IncreaseEnergy(_income);
             }
         }
         #endregion

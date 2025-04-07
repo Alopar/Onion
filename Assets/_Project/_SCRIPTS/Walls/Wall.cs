@@ -11,13 +11,14 @@ namespace Gameplay
         [SerializeField] protected BuildingHealth _health;
         [SerializeField] protected GameObject _tower1;
         [SerializeField] protected GameObject _tower2;
+        [SerializeField] protected float _explodeRange;
 
         protected WallDirection _wallDirection;
         protected int _wallRing;
 
         public WallDirection WallDirection => _wallDirection;
 
-        public void Init(WallDirection direction, int ring, WallsProgress wallsProgress)
+        public virtual void Init(WallDirection direction, int ring)
         {
             _wallDirection = direction;
             _wallRing = ring;
@@ -64,8 +65,27 @@ namespace Gameplay
             // TODO: change broken state
         }
 
-        protected virtual void Destroy() =>
+        protected virtual void Destroy()
+        {
+            Vector3 vectorDirection = WallsSettings.Instance.GetDirectionVector(_wallDirection);
+            Vector3 angle = WallsSettings.Instance.GetWallAngle(_wallDirection);
+            RaycastHit2D[] hits = Physics2D.BoxCastAll(transform.position, Vector2.one * _explodeRange, angle.z, vectorDirection, _explodeRange);
+            List<EnemyHealth> enemies = new();
+
+            foreach (var hit in hits)
+                if (hit.transform.TryGetComponent<EnemyHealth>(out var enemy))
+                    enemies.Add(enemy);
+
+            float totalDamage = GetExplosionDamage();
+            float dmg = totalDamage / enemies.Count;
+
+            foreach (var enemy in enemies)
+                enemy.DealDamage(dmg);
+
             WallsManager.Instance.DestroyWall(this);
+        }
+
+        protected virtual float GetExplosionDamage() => 0;
 
         private void OnEnable()
         {

@@ -281,6 +281,8 @@ MonoBehaviour:
   _health: {fileID: 3210444903575156593}
   _tower1: {fileID: 1262584827324111621}
   _tower2: {fileID: 8184828005040678090}
+  _explodeRange: 3
+  _energyMiner: {fileID: 4043072758422377873}
 --- !u!114 &3210444903575156593
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -351,7 +353,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _income: 2
   _delay: 1
-  _multiplier: 2
 --- !u!1 &8184828005040678090
 GameObject:
   m_ObjectHideFlags: 0

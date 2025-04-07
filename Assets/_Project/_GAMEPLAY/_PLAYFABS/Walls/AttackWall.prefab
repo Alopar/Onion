@@ -54,8 +54,8 @@ MonoBehaviour:
   _health: {fileID: 6188143171455372143}
   _tower1: {fileID: 2482634603275169855}
   _tower2: {fileID: 3375818352148620497}
+  _explodeRange: 3
   _wallWeaponPrefab: {fileID: 2168358166073901530, guid: 1cc3e6f8e5e9b4b45b472f263296d972, type: 3}
-  _weaponsCount: 3
 --- !u!114 &6188143171455372143
 MonoBehaviour:
   m_ObjectHideFlags: 0

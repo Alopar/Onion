@@ -16,9 +16,16 @@ namespace Gameplay
                 weapon.Shoot(_wallDirection);
         }
 
-        public void CreateWeapons(float angle, float radius, WallsProgress wallsProgress)
+        public override void Init(WallDirection direction, int ring)
         {
-            _weaponsCount = wallsProgress.GetWallsCount(_wallRing);
+            base.Init(direction, ring);
+
+            _weaponsCount = WallsManager.Instance.WallsProgress.AttackWallsWeaponsDefault + _wallRing * WallsManager.Instance.WallsProgress.AttackWallsWeaponsIncrease;
+            _health.SetMaxHealth(WallsManager.Instance.WallsProgress.AttackWallDefaultHealth + _wallRing * WallsManager.Instance.WallsProgress.AttackWallHealthIncrease);
+        }
+
+        public void CreateWeapons(float angle, float radius)
+        {
             angle = angle / 180;
             if (_weaponsCount % 2 == 1)
             {
@@ -35,6 +42,7 @@ namespace Gameplay
                     weapon.transform.localPosition = position;
                     Vector3 lookDirection = transform.position - weapon.transform.position;
                     weapon.transform.right = -lookDirection;
+                    weapon.Init(_wallRing);
                     _weapons.Add(weapon);
                 }
             }
@@ -54,9 +62,13 @@ namespace Gameplay
 
                     Vector3 lookDirection = transform.position - weapon.transform.position;
                     weapon.transform.right = -lookDirection;
+                    weapon.Init(_wallRing);
                     _weapons.Add(weapon);
                 }
             }
         }
+
+        protected override float GetExplosionDamage() =>
+            _health.MaxHealth * WallsManager.Instance.WallsProgress.AttackWallDestroyDamageMultiplier;
     }
 }

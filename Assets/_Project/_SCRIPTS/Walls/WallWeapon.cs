@@ -7,10 +7,16 @@ namespace Gameplay
         [SerializeField] private WallWeaponProjectile _weaponProjectilePrefab;
         [SerializeField] private Transform _firePoint;
         [SerializeField] private float _weaponRange;
-        [SerializeField] private float _damage;
-        [SerializeField] private float _cooldown;
+        private float _damage;
 
+        private float _cooldown;
         private float _cooldownTimer;
+
+        public void Init(int ring)
+        {
+            _cooldown = WallsManager.Instance.WallsProgress.AttackWallsCooldownDefault + ring * WallsManager.Instance.WallsProgress.AttackWallsCooldownIncrease;
+            _damage = WallsManager.Instance.WallsProgress.AttackWallsDamageDefault;
+        }
 
         public void Shoot(WallDirection direction)
         {

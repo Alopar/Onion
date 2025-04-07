@@ -54,6 +54,7 @@ MonoBehaviour:
   _health: {fileID: 1686513040509352616}
   _tower1: {fileID: 5482780050052732643}
   _tower2: {fileID: 3322412665744903640}
+  _explodeRange: 3
 --- !u!114 &1686513040509352616
 MonoBehaviour:
   m_ObjectHideFlags: 0
