@@ -53,6 +53,18 @@ namespace Gameplay
 
             return true;
         }
+
+        public int GetCost(WallType wall, int ring)
+        {
+            if (wall == WallType.Produce)
+                return WallsManager.Instance.WallsProgress.ProduceWallCostDefault + WallsManager.Instance.WallsProgress.ProduceWallCostIncrease * ring;
+            if (wall == WallType.Attack)
+                return WallsManager.Instance.WallsProgress.AttackWallCostDefault + WallsManager.Instance.WallsProgress.AttackWallCostIncrease * ring;
+            if (wall == WallType.Protect)
+                return WallsManager.Instance.WallsProgress.ProtectWallCostDefault + WallsManager.Instance.WallsProgress.ProtectWallCostIncrease * ring;
+
+            return 0;
+        }
         #endregion
     }
 }
