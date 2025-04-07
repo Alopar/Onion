@@ -277,22 +277,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: WallsManager
       objectReference: {fileID: 0}
-    - target: {fileID: 8203361518646047560, guid: 1a82b10d3c19d674abb2f24b15e5b6d6, type: 3}
-      propertyPath: _colliderSegments
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 8203361518646047560, guid: 1a82b10d3c19d674abb2f24b15e5b6d6, type: 3}
-      propertyPath: _offsetFromCenter
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 8203361518646047560, guid: 1a82b10d3c19d674abb2f24b15e5b6d6, type: 3}
-      propertyPath: _offsetBetweenWalls
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 8203361518646047560, guid: 1a82b10d3c19d674abb2f24b15e5b6d6, type: 3}
-      propertyPath: _defaultWallThickness
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
