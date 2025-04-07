@@ -281,7 +281,7 @@ MonoBehaviour:
   _health: {fileID: 3210444903575156593}
   _tower1: {fileID: 1262584827324111621}
   _tower2: {fileID: 8184828005040678090}
-  _explodeRange: 1
+  _explodeRange: 3
   _energyMiner: {fileID: 4043072758422377873}
 --- !u!114 &3210444903575156593
 MonoBehaviour:

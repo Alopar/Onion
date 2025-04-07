@@ -69,13 +69,18 @@ namespace Gameplay
         {
             Vector3 vectorDirection = WallsSettings.Instance.GetDirectionVector(_wallDirection);
             Vector3 angle = WallsSettings.Instance.GetWallAngle(_wallDirection);
-            RaycastHit2D[] hits = Physics2D.BoxCastAll(transform.position + vectorDirection.normalized * _explodeRange / 2, Vector2.one * _explodeRange, angle.z, vectorDirection, _explodeRange, 3 << 3);
+            RaycastHit2D[] hits = Physics2D.BoxCastAll(transform.position, Vector2.one * _explodeRange, angle.z, vectorDirection, _explodeRange);
+            List<EnemyHealth> enemies = new();
+
+            foreach (var hit in hits)
+                if (hit.transform.TryGetComponent<EnemyHealth>(out var enemy))
+                    enemies.Add(enemy);
 
             float totalDamage = GetExplosionDamage();
-            float dmg = totalDamage / hits.Length;
+            float dmg = totalDamage / enemies.Count;
 
-            foreach (RaycastHit2D hit in hits)
-                hit.transform.GetComponent<EnemyHealth>().DealDamage(dmg);
+            foreach (var enemy in enemies)
+                enemy.DealDamage(dmg);
 
             WallsManager.Instance.DestroyWall(this);
         }
