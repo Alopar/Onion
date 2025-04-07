@@ -24,7 +24,6 @@ namespace Gameplay
         }
         #endregion
 
-
         #region COROUTINES
         private IEnumerator EnergyProduction()
         {
