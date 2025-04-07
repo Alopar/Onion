@@ -48,9 +48,9 @@ namespace Gameplay
 
         private void Start()
         {
-            _sampleTimer = _sampleDelay + Time.time;
-            _musicSlider.value = PlayerPrefs.GetFloat("MusicVolume", 0.5f);
-            _soundSlider.value = PlayerPrefs.GetFloat("SoundVolume", 0.75f);
+            _sampleTimer = _sampleDelay + Time.unscaledTime;
+            _musicSlider.value = PlayerPrefs.GetFloat("MusicVolume", 0.25f);
+            _soundSlider.value = PlayerPrefs.GetFloat("SoundVolume", 0.5f);
         }
         #endregion
 
@@ -65,10 +65,10 @@ namespace Gameplay
         {
             PlayerPrefs.SetFloat("SoundVolume", value);
             _soundSource.volume = value;
-            
-            if (_sampleTimer > Time.time) return;
 
-            _sampleTimer = _sampleDelay + Time.time;
+            if (_sampleTimer > Time.unscaledTime) return;
+
+            _sampleTimer = _sampleDelay + Time.unscaledTime;
             PlaySound(_sampleSound);
         }
         #endregion

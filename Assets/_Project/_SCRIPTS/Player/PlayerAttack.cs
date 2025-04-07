@@ -1,8 +1,10 @@
 using System;
+using System.Collections.Generic;
 using DG.Tweening;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.Rendering.Universal;
+using Random = UnityEngine.Random;
 
 namespace Gameplay
 {
@@ -24,6 +26,7 @@ namespace Gameplay
         [Header("✨ Attack Feedback ✨")]
         [SerializeField, Range(0, 1)] private float _duration;
         [SerializeField] private Light2D _light;
+        [SerializeField] private List<AudioClip> _soundEffects;
         #endregion
 
         #region FIELDS PRIVATE
@@ -39,7 +42,9 @@ namespace Gameplay
 
         private void Update()
         {
+            if (Time.timeScale == 0) return;
             if (!_fireInputAction.action.IsPressed()) return;
+
             Attack();
         }
         #endregion
@@ -74,6 +79,8 @@ namespace Gameplay
 
         private void ShowDamageFeedback()
         {
+            var clip = _soundEffects[Random.Range(0, _soundEffects.Count)];
+            SoundManager.Instance.PlaySound(clip);
             DOVirtual.Float(2f, 3f, _duration, (value) => { _light.intensity = value; }).SetLoops(2, LoopType.Yoyo);
             DOVirtual.Float(3f, 3.5f, _duration, (value) => { _light.pointLightOuterRadius = value; }).SetLoops(2, LoopType.Yoyo);
         }

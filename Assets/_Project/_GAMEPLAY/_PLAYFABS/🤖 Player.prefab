@@ -240,7 +240,7 @@ GameObject:
   - component: {fileID: 1165017226473216154}
   - component: {fileID: 671926823629790617}
   m_Layer: 0
-  m_Name: Player
+  m_Name: "\U0001F916 Player"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -294,6 +294,9 @@ MonoBehaviour:
   _lookInputAction: {fileID: -1654692200621890270, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   _duration: 0.2
   _light: {fileID: 269053402372627768}
+  _soundEffects:
+  - {fileID: 8300000, guid: 1e0fea91a21c1e941a3fb6d546610c16, type: 3}
+  - {fileID: 8300000, guid: 50e44a5b636270242898ce25471eafc1, type: 3}
 --- !u!114 &671926823629790617
 MonoBehaviour:
   m_ObjectHideFlags: 0

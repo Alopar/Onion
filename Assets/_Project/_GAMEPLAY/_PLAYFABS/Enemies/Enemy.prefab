@@ -97,6 +97,7 @@ MonoBehaviour:
   _scaleMagnitude: 1.1
   _view: {fileID: 8429040547201769053}
   _mask: {fileID: 0}
+  _soundEffect: {fileID: 8300000, guid: b7941133a79b7b34c9d894a555e41f32, type: 3}
 --- !u!114 &-8357079279995346652
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -112,6 +113,10 @@ MonoBehaviour:
   _damage: 5
   _cooldown: 0.5
   _movement: {fileID: 3321037084730334305}
+  _soundEffects:
+  - {fileID: 8300000, guid: f4ba90da34d90b9429cec7504086ffa1, type: 3}
+  - {fileID: 8300000, guid: de8a9c6684c32fb44bd5fc0d611b93db, type: 3}
+  - {fileID: 8300000, guid: 15ed923fb961f4b4bb7f06002fe7082c, type: 3}
 --- !u!114 &3321037084730334305
 MonoBehaviour:
   m_ObjectHideFlags: 0
