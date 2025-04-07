@@ -34,7 +34,7 @@ namespace Gameplay
         {
             Vector3 vectorDirection = WallsSettings.Instance.GetDirectionVector(direction);
             Vector3 angle = WallsSettings.Instance.GetWallAngle(direction);
-            RaycastHit2D[] hits = Physics2D.BoxCastAll(transform.position + vectorDirection.normalized * _weaponRange / 2, Vector2.one * _weaponRange, angle.z, vectorDirection, _weaponRange, 3 << 3);
+            RaycastHit2D[] hits = Physics2D.BoxCastAll(transform.position + vectorDirection.normalized * _weaponRange / 2, Vector2.one * _weaponRange, angle.z, vectorDirection, _weaponRange);
             Transform enemy = null;
             float closestDistance = 1000000;
 

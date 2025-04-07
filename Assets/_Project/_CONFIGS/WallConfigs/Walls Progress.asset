@@ -32,10 +32,10 @@ MonoBehaviour:
   AttackWallDestroyDamageMultiplier: 0.664
   ProduceWallDefaultHealth: 75
   ProduceWallHealthIncrease: 15
-  ProduceWallIncome: 50
-  ProduceWallIncomeIncrease: 25
-  ProduceWallIncomeCooldown: 0.5
-  ProduceWallIncomeCooldownIncrease: 0.2
-  ProduceWallCostDefault: 150
-  ProduceWallCostIncrease: 75
+  ProduceWallIncome: 25
+  ProduceWallIncomeIncrease: 5
+  ProduceWallIncomeCooldown: 0.75
+  ProduceWallIncomeCooldownIncrease: 0.75
+  ProduceWallCostDefault: 250
+  ProduceWallCostIncrease: 100
   ProduceWallDestroyDamageMultiplier: 1.33
