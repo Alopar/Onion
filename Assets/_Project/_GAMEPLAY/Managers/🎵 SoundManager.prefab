@@ -179,6 +179,8 @@ MonoBehaviour:
   _soundSource: {fileID: 9127527794860958678}
   _musicSlider: {fileID: 0}
   _soundSlider: {fileID: 0}
+  _sampleSound: {fileID: 8300000, guid: b7941133a79b7b34c9d894a555e41f32, type: 3}
+  _sampleDelay: 0.25
 --- !u!1 &5632749705645630700
 GameObject:
   m_ObjectHideFlags: 0

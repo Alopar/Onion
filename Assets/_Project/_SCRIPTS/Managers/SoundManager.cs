@@ -9,14 +9,19 @@ namespace Gameplay
         #region FIELDS INSPECTOR
         [SerializeField] private AudioSource _musicSource;
         [SerializeField] private AudioSource _soundSource;
-        
+
         [Space(10)]
         [SerializeField] private Slider _musicSlider;
         [SerializeField] private Slider _soundSlider;
+
+        [Space(10)]
+        [SerializeField] private AudioClip _sampleSound;
+        [SerializeField, Range(0, 1)] private float _sampleDelay = 0.25f;
         #endregion
 
         #region FIELDS PRIVATE
         private static SoundManager _instance;
+        private float _sampleTimer;
         #endregion
 
         #region PROPERTIES
@@ -43,6 +48,7 @@ namespace Gameplay
 
         private void Start()
         {
+            _sampleTimer = _sampleDelay + Time.time;
             _musicSlider.value = PlayerPrefs.GetFloat("MusicVolume", 0.5f);
             _soundSlider.value = PlayerPrefs.GetFloat("SoundVolume", 0.75f);
         }
@@ -59,6 +65,11 @@ namespace Gameplay
         {
             PlayerPrefs.SetFloat("SoundVolume", value);
             _soundSource.volume = value;
+            
+            if (_sampleTimer > Time.time) return;
+
+            _sampleTimer = _sampleDelay + Time.time;
+            PlaySound(_sampleSound);
         }
         #endregion
 
