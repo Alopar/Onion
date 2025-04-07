@@ -17,6 +17,7 @@ namespace Gameplay
         protected int _wallRing;
 
         public WallDirection WallDirection => _wallDirection;
+        public int Ring => _wallRing;
 
         public virtual void Init(WallDirection direction, int ring)
         {
