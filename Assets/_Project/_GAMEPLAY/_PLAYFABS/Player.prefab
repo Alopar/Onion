@@ -292,6 +292,8 @@ MonoBehaviour:
   _projectilePrefab: {fileID: 5627503968962789840, guid: efd9b84622e673448a2ee3baad35df6e, type: 3}
   _fireInputAction: {fileID: 764514604340119421, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   _lookInputAction: {fileID: -1654692200621890270, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
+  _duration: 0.2
+  _light: {fileID: 269053402372627768}
 --- !u!114 &671926823629790617
 MonoBehaviour:
   m_ObjectHideFlags: 0
