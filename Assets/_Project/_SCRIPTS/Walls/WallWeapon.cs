@@ -27,6 +27,7 @@ namespace Gameplay
 
             _cooldownTimer = Time.time + _cooldown;
             var projectile = Instantiate(_weaponProjectilePrefab, _firePoint.position, Quaternion.identity);
+            transform.right = enemy.position - transform.position;
             projectile.Init(_damage, (enemy.position - _firePoint.position).normalized);
         }
 
