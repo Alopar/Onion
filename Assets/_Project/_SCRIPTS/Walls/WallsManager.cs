@@ -1,5 +1,6 @@
 ﻿using NaughtyAttributes;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 namespace Gameplay
@@ -55,12 +56,14 @@ namespace Gameplay
                 wall = Instantiate(_produceWallPrefab);
 
             wall.transform.SetParent(_wallsContainer);
-            float nextWallDistance = GetNextWallDistance(direction);
+
+            int ring = GetFreeRing(direction);
+            float wallRadius = GetNextWallDistance(ring);
             wall.transform.eulerAngles = WallsSettings.Instance.GetWallAngle(direction);
-            wall.Init(direction, _walls[direction].Count * 2 + (direction.IsCorner() ? 1 : 0));
-            wall.Draw(_wallSegments, _wallAngle, nextWallDistance);
+            wall.Init(direction, ring);
+            wall.Draw(_wallSegments, _wallAngle, wallRadius);
             wall.UpdateCollider(_colliderSegments);
-            if (wall is AttackWall attackWall) attackWall.CreateWeapons(_wallAngle, nextWallDistance);
+            if (wall is AttackWall attackWall) attackWall.CreateWeapons(_wallAngle, wallRadius);
             _walls[direction].Add(wall);
             UpdateCreationPreviews();
             return (T)wall;
@@ -104,11 +107,11 @@ namespace Gameplay
         {
             WallPreview preview = Instantiate(_wallPreviewPrefab);
             preview.transform.SetParent(_wallsContainer);
-            
-            float nextWallDistance = GetNextWallDistance(direction);
+            int ring = GetFreeRing(direction);
+            float wallRadius = GetNextWallDistance(ring);
             preview.transform.eulerAngles = WallsSettings.Instance.GetWallAngle(direction);
-            preview.Init(direction, _walls[direction].Count * 2 + (direction.IsCorner() ? 1 : 0));
-            preview.Draw(_wallSegments, _wallAngle, nextWallDistance);
+            preview.Init(direction, ring);
+            preview.Draw(_wallSegments, _wallAngle, wallRadius);
             preview.UpdateCollider(_colliderSegments);
 
             if (_previews.TryGetValue(direction, out WallPreview lastPreview))
@@ -121,76 +124,72 @@ namespace Gameplay
                 _previews.Add(direction, preview);
         }
 
-        private float GetNextWallDistance(WallDirection direction)
+        private int GetFreeRing(WallDirection direction)
         {
-            bool isCorner = direction.IsCorner();
-            float offsetsBetween;
-            float wallsThickness;
-            if (_walls[direction].Count == 0 && isCorner)
-            {
-                offsetsBetween = _offsetBetweenWalls;
-                wallsThickness = _defaultWallThickness;
-            }
-            else
-            {
-                offsetsBetween = _walls[direction].Count * _offsetBetweenWalls * 2;
-                wallsThickness = _defaultWallThickness * _walls[direction].Count * 2;
-                if (isCorner)
-                {
-                    offsetsBetween += _offsetBetweenWalls;
-                    wallsThickness += _defaultWallThickness;
-                }
-            }
+            int ring = direction.IsCorner() ? 1 : 0;
+            while (_walls[direction].FirstOrDefault(x => x.Ring == ring) != default)
+                ring += 2;
+
+            return ring;
+        }
+
+
+        private float GetNextWallDistance(int ring)
+        {
+            float offsetsBetween = ring * _offsetBetweenWalls;
+            float wallsThickness = ring * _defaultWallThickness;
             return _offsetFromCenter + offsetsBetween + wallsThickness;
         }
 
         private bool CanPlace(WallDirection direction)
         {
+            int ring = GetFreeRing(direction);
+
             switch (direction)
             {
                 case WallDirection.Top:
-                    if (_walls[direction].Count == 0)
+                    if (ring == 0)
                         return true;
 
-                    return _walls[WallDirection.TopLeft].Count == _walls[WallDirection.TopRight].Count 
-                        && _walls[direction].Count == _walls[WallDirection.TopRight].Count;
+                    return _walls[WallDirection.TopLeft].FirstOrDefault(x => x.Ring == ring - 1) != default
+                        && _walls[WallDirection.TopRight].FirstOrDefault(x => x.Ring == ring - 1) != default;
 
                 case WallDirection.Right:
-                    if (_walls[direction].Count == 0)
+                    if (ring == 0)
                         return true;
 
-                    return _walls[WallDirection.TopRight].Count == _walls[WallDirection.BottomRight].Count
-                        && _walls[direction].Count == _walls[WallDirection.BottomRight].Count;
+                    return _walls[WallDirection.TopRight].FirstOrDefault(x => x.Ring == ring - 1) != default
+                        && _walls[WallDirection.BottomRight].FirstOrDefault(x => x.Ring == ring - 1) != default;
 
                 case WallDirection.Bottom:
-                    if (_walls[direction].Count == 0)
+                    if (ring == 0)
                         return true;
 
-                    return _walls[WallDirection.BottomRight].Count == _walls[WallDirection.BottomLeft].Count
-                        && _walls[direction].Count == _walls[WallDirection.BottomLeft].Count;
+                    return _walls[WallDirection.BottomRight].FirstOrDefault(x => x.Ring == ring - 1) != default
+                        && _walls[WallDirection.BottomLeft].FirstOrDefault(x => x.Ring == ring - 1) != default;
 
                 case WallDirection.Left:
-                    if (_walls[direction].Count == 0)
+                    if (ring == 0)
                         return true;
 
-                    return _walls[WallDirection.BottomLeft].Count == _walls[WallDirection.TopLeft].Count
-                        && _walls[direction].Count == _walls[WallDirection.TopLeft].Count;
+                    return _walls[WallDirection.BottomLeft].FirstOrDefault(x => x.Ring == ring - 1) != default
+                        && _walls[WallDirection.TopLeft].FirstOrDefault(x => x.Ring == ring - 1) != default;
 
                 case WallDirection.TopLeft:
-                    return _walls[WallDirection.Left].Count == _walls[WallDirection.Top].Count
-                        && _walls[direction].Count < _walls[WallDirection.Top].Count;
+                    return _walls[WallDirection.Left].FirstOrDefault(x => x.Ring == ring - 1) != default
+                        && _walls[WallDirection.Top].FirstOrDefault(x => x.Ring == ring - 1) != default;
 
                 case WallDirection.TopRight:
-                    return _walls[WallDirection.Top].Count == _walls[WallDirection.Right].Count
-                        && _walls[direction].Count < _walls[WallDirection.Right].Count;
+                    return _walls[WallDirection.Top].FirstOrDefault(x => x.Ring == ring - 1) != default
+                        && _walls[WallDirection.Right].FirstOrDefault(x => x.Ring == ring - 1) != default;
 
                 case WallDirection.BottomRight:
-                    return _walls[WallDirection.Right].Count == _walls[WallDirection.Bottom].Count
-                        && _walls[direction].Count < _walls[WallDirection.Bottom].Count;
+                    return _walls[WallDirection.Right].FirstOrDefault(x => x.Ring == ring - 1) != default
+                        && _walls[WallDirection.Bottom].FirstOrDefault(x => x.Ring == ring - 1) != default;
 
                 case WallDirection.BottomLeft:
-                    return _walls[WallDirection.Bottom].Count == _walls[WallDirection.Left].Count
-                        && _walls[direction].Count < _walls[WallDirection.Left].Count;
+                    return _walls[WallDirection.Bottom].FirstOrDefault(x => x.Ring == ring - 1) != default
+                        && _walls[WallDirection.Left].FirstOrDefault(x => x.Ring == ring - 1) != default;
             }
 
             return false;
