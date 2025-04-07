@@ -28,7 +28,7 @@ namespace Gameplay
         [Button("⭐ START GAME ⭐")]
         public void StartGame()
         {
-            StartCoroutine(DelayCall(0.25f, () => { SceneManager.LoadScene(1); }));
+            StartCoroutine(DelayCall(0.25f, () => { SceneManager.LoadScene(2); }));
         }
 
         [Button("💢 RESTART GAME 💢")]
@@ -41,6 +41,12 @@ namespace Gameplay
         public void StartMenu()
         {
             StartCoroutine(DelayCall(0.25f, () => { SceneManager.LoadScene(0); }));
+        }
+
+        [Button("❔ SHOW TUTORIAL ❔")]
+        public void ShowTutorial()
+        {
+            StartCoroutine(DelayCall(0.25f, () => { SceneManager.LoadScene(1); }));
         }
 
         [Button("💤 PAUSE GAME 💤")]
