@@ -1,4 +1,4 @@
-using System;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace Gameplay
@@ -11,6 +11,10 @@ namespace Gameplay
 
         [Space(10)]
         [SerializeField] private EnemyMovement _movement;
+
+        [Space(10)]
+        [Header("✨ Attack Feedback ✨")]
+        [SerializeField] private List<AudioClip> _soundEffects;
         #endregion
 
         #region FIELDS PRIVATE
@@ -21,10 +25,11 @@ namespace Gameplay
         #region UNITY CALLBACKS
         private void OnTriggerEnter2D(Collider2D other)
         {
-            _buildingHealth = other.gameObject.GetComponentInParent<BuildingHealth>();
-            if (_buildingHealth == null) return;
-            if (gameObject.CompareTag("EnemyFly") && !_buildingHealth.CompareTag("BuildingSupport")) return;
+            var buildingHealth = other.gameObject.GetComponentInParent<BuildingHealth>();
+            if (buildingHealth == null) return;
+            if (gameObject.CompareTag("EnemyFly") && !buildingHealth.CompareTag("BuildingSupport")) return;
 
+            _buildingHealth = buildingHealth;
             _movement.enabled = false;
         }
 
@@ -47,6 +52,9 @@ namespace Gameplay
 
             _buildingHealth.DealDamage(_damage);
             _cooldownTimer = Time.time + _cooldown;
+
+            var clip = _soundEffects[Random.Range(0, _soundEffects.Count)];
+            SoundManager.Instance.PlaySound(clip);
         }
         #endregion
     }

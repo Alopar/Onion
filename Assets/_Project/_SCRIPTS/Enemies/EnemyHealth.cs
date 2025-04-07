@@ -17,6 +17,7 @@ namespace Gameplay
         [Space(10)]
         [SerializeField] private Transform _view;
         [SerializeField] private SpriteRenderer _mask;
+        [SerializeField] private AudioClip _soundEffect;
         #endregion
 
         #region FIELDS PRIVATE
@@ -75,6 +76,7 @@ namespace Gameplay
             _view.DOKill();
             _mask.DOFade(1f, _duration).From(0f).SetLoops(2, LoopType.Yoyo);
             _view.DOScale(Vector3.one * _scaleMagnitude, _duration).SetLoops(2, LoopType.Yoyo).OnComplete(() => {
+                SoundManager.Instance.PlaySound(_soundEffect);
                 _view.DOScale(Vector3.zero, _duration);
                 Destroy(gameObject, _duration);
             });
