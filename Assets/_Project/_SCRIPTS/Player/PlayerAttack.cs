@@ -1,6 +1,8 @@
 using System;
+using DG.Tweening;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.Rendering.Universal;
 
 namespace Gameplay
 {
@@ -17,6 +19,11 @@ namespace Gameplay
         [Space(10)]
         [SerializeField] private InputActionReference _fireInputAction;
         [SerializeField] private InputActionReference _lookInputAction;
+
+        [Space(10)]
+        [Header("✨ Attack Feedback ✨")]
+        [SerializeField, Range(0, 1)] private float _duration;
+        [SerializeField] private Light2D _light;
         #endregion
 
         #region FIELDS PRIVATE
@@ -46,6 +53,8 @@ namespace Gameplay
             var projectile = Instantiate(_projectilePrefab, _firePoint.position, Quaternion.identity);
             Rotate(projectile.transform, GetLookDirection());
             projectile.Init(_damage);
+
+            ShowDamageFeedback();
         }
 
         private void Rotate(Transform projectile, Vector3 direction)
@@ -61,6 +70,12 @@ namespace Gameplay
             var mousePosition = _lookInputAction.action.ReadValue<Vector2>();
 
             return (mousePosition - screenPosition).normalized;;
+        }
+
+        private void ShowDamageFeedback()
+        {
+            DOVirtual.Float(2f, 3f, _duration, (value) => { _light.intensity = value; }).SetLoops(2, LoopType.Yoyo);
+            DOVirtual.Float(3f, 3.5f, _duration, (value) => { _light.pointLightOuterRadius = value; }).SetLoops(2, LoopType.Yoyo);
         }
         #endregion
     }

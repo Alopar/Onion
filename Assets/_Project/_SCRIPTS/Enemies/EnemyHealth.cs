@@ -44,6 +44,8 @@ namespace Gameplay
         #region METHODS PUBLIC
         public void DealDamage(float damage)
         {
+            if (_healthCurrent <= 0) return;
+
             _healthCurrent -= damage;
             OnHealthChanged?.Invoke(_healthCurrent, _healthMax);
 
