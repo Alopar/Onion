@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: EnemyWave(Clone)
   m_EditorClassIdentifier: 
   wave: 1
-  number: 3
-  delay: 1
+  number: 10
+  delay: 12
   radius: 20
   enemyPrefab: {fileID: 7554888202306409818, guid: 071d874872c9d0648a480cb248e99fbc, type: 3}
 --- !u!114 &-6820807534389802685
@@ -290,9 +290,9 @@ MonoBehaviour:
   m_Name: EnemyWave(Clone)(Clone)(Clone)(Clone)
   m_EditorClassIdentifier: 
   wave: 5
-  number: 45
-  delay: 0.5
-  radius: 30
+  number: 180
+  delay: 0.67
+  radius: 60
   enemyPrefab: {fileID: 2117215015767839618, guid: f1af8eeb91178d14e917f9e69a92998a, type: 3}
 --- !u!114 &-6346972619884045717
 MonoBehaviour:
@@ -655,9 +655,9 @@ MonoBehaviour:
   m_Name: EnemyWave(Clone)(Clone)(Clone)(Clone)(Clone)
   m_EditorClassIdentifier: 
   wave: 5
-  number: 9
-  delay: 1
-  radius: 30
+  number: 30
+  delay: 4
+  radius: 60
   enemyPrefab: {fileID: 7554888202306409818, guid: 071d874872c9d0648a480cb248e99fbc, type: 3}
 --- !u!114 &-3037207188535556430
 MonoBehaviour:
@@ -672,9 +672,9 @@ MonoBehaviour:
   m_Name: EnemyWave(Clone)(Clone)(Clone)
   m_EditorClassIdentifier: 
   wave: 3
-  number: 3
-  delay: 1
-  radius: 25
+  number: 22
+  delay: 5
+  radius: 60
   enemyPrefab: {fileID: 7554888202306409818, guid: 071d874872c9d0648a480cb248e99fbc, type: 3}
 --- !u!114 &-1890752527119629015
 MonoBehaviour:
@@ -689,9 +689,9 @@ MonoBehaviour:
   m_Name: EnemyWave(Clone)(Clone)(Clone)
   m_EditorClassIdentifier: 
   wave: 4
-  number: 30
-  delay: 0.5
-  radius: 25
+  number: 140
+  delay: 0.85
+  radius: 60
   enemyPrefab: {fileID: 2117215015767839618, guid: f1af8eeb91178d14e917f9e69a92998a, type: 3}
 --- !u!114 &-393067119266014836
 MonoBehaviour:
@@ -706,9 +706,9 @@ MonoBehaviour:
   m_Name: EnemyWave(Clone)(Clone)
   m_EditorClassIdentifier: 
   wave: 2
-  number: 6
-  delay: 1
-  radius: 20
+  number: 18
+  delay: 6.5
+  radius: 40
   enemyPrefab: {fileID: 7554888202306409818, guid: 071d874872c9d0648a480cb248e99fbc, type: 3}
 --- !u!114 &11400000
 MonoBehaviour:
@@ -761,8 +761,8 @@ MonoBehaviour:
   m_Name: EnemyWave
   m_EditorClassIdentifier: 
   wave: 1
-  number: 15
-  delay: 0.5
+  number: 100
+  delay: 1.2
   radius: 20
   enemyPrefab: {fileID: 2117215015767839618, guid: f1af8eeb91178d14e917f9e69a92998a, type: 3}
 --- !u!114 &5340935010246247429
@@ -778,9 +778,9 @@ MonoBehaviour:
   m_Name: EnemyWave(Clone)(Clone)
   m_EditorClassIdentifier: 
   wave: 3
-  number: 15
-  delay: 0.5
-  radius: 25
+  number: 100
+  delay: 1.2
+  radius: 60
   enemyPrefab: {fileID: 2117215015767839618, guid: f1af8eeb91178d14e917f9e69a92998a, type: 3}
 --- !u!114 &5607062912003625383
 MonoBehaviour:
@@ -827,9 +827,9 @@ MonoBehaviour:
   m_Name: EnemyWave(Clone)(Clone)(Clone)(Clone)
   m_EditorClassIdentifier: 
   wave: 4
-  number: 6
-  delay: 1
-  radius: 25
+  number: 20
+  delay: 6
+  radius: 60
   enemyPrefab: {fileID: 7554888202306409818, guid: 071d874872c9d0648a480cb248e99fbc, type: 3}
 --- !u!114 &8592819189072962363
 MonoBehaviour:
@@ -844,7 +844,7 @@ MonoBehaviour:
   m_Name: EnemyWave(Clone)
   m_EditorClassIdentifier: 
   wave: 2
-  number: 30
-  delay: 0.5
-  radius: 20
+  number: 140
+  delay: 0.85
+  radius: 40
   enemyPrefab: {fileID: 2117215015767839618, guid: f1af8eeb91178d14e917f9e69a92998a, type: 3}

@@ -12,30 +12,30 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 83a6e0dfaa6f0b44ebe8eaf4b7074209, type: 3}
   m_Name: Walls Progress
   m_EditorClassIdentifier: 
-  ProtectWallDefaultHealth: 150
+  ProtectWallDefaultHealth: 400
   ProtectWallHealthIncrease: 50
-  ProtectWallDefaultReflectDamage: 0.2
-  ProtectWallReflectDamageDecrease: 0.015
+  ProtectWallDefaultReflectDamage: 0.3
+  ProtectWallReflectDamageDecrease: 0.02
   ProtectWallReflectDamageMin: 0.02
-  ProtectWallCostDefault: 200
+  ProtectWallCostDefault: 125
   ProtectWallCostIncrease: 100
   ProtectWallDestroyDamageMultiplier: 0.5
   AttackWallDefaultHealth: 125
   AttackWallHealthIncrease: 25
   AttackWallsWeaponsDefault: 1
   AttackWallsWeaponsIncrease: 1
-  AttackWallsCooldownDefault: 0.5
-  AttackWallsCooldownIncrease: 0.35
-  AttackWallsDamageDefault: 10
+  AttackWallsCooldownDefault: 0.75
+  AttackWallsCooldownIncrease: 0.4
+  AttackWallsDamageDefault: 7.5
   AttackWallCostDefault: 300
-  AttackWallCostIncrease: 150
+  AttackWallCostIncrease: 450
   AttackWallDestroyDamageMultiplier: 0.664
   ProduceWallDefaultHealth: 75
   ProduceWallHealthIncrease: 15
   ProduceWallIncome: 25
   ProduceWallIncomeIncrease: 5
-  ProduceWallIncomeCooldown: 0.75
-  ProduceWallIncomeCooldownIncrease: 0.75
+  ProduceWallIncomeCooldown: 0.8
+  ProduceWallIncomeCooldownIncrease: 1
   ProduceWallCostDefault: 250
-  ProduceWallCostIncrease: 100
+  ProduceWallCostIncrease: 150
   ProduceWallDestroyDamageMultiplier: 1.33

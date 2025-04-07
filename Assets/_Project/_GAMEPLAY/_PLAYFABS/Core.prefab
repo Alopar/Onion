@@ -304,9 +304,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f457370122ae914ab835f4c50c1e5b8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _income: 100
-  _delay: 1
-  _multiplier: 1
+  _income: 75
+  _delay: 1.3
 --- !u!114 &6083288080688921060
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -319,7 +318,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e054489f988a7604badbb1727449fb34, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _healthMax: 1000
+  _healthMax: 500
 --- !u!114 &7418206323482728513
 MonoBehaviour:
   m_ObjectHideFlags: 0

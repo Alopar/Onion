@@ -236,11 +236,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8357079279995346652, guid: b6563ebf031e2334d81e17166036345a, type: 3}
       propertyPath: _damage
-      value: 15
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: -8357079279995346652, guid: b6563ebf031e2334d81e17166036345a, type: 3}
       propertyPath: _cooldown
-      value: 1
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: -6916650760614379563, guid: b6563ebf031e2334d81e17166036345a, type: 3}
       propertyPath: _mask
@@ -248,11 +248,11 @@ PrefabInstance:
       objectReference: {fileID: 356372031319625302}
     - target: {fileID: -6916650760614379563, guid: b6563ebf031e2334d81e17166036345a, type: 3}
       propertyPath: _healthMax
-      value: 5
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 3321037084730334305, guid: b6563ebf031e2334d81e17166036345a, type: 3}
       propertyPath: _speed
-      value: 2
+      value: 3.5
       objectReference: {fileID: 0}
     - target: {fileID: 5085811582975388577, guid: b6563ebf031e2334d81e17166036345a, type: 3}
       propertyPath: m_Color.b

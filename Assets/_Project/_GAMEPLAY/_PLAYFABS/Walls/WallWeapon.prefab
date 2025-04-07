@@ -47,7 +47,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _weaponProjectilePrefab: {fileID: 4155089616364676185, guid: aba1ca1cc5f910f4198f11459a5391fc, type: 3}
   _firePoint: {fileID: 5665081679139808962}
-  _weaponRange: 4
+  _weaponRange: 6
 --- !u!1 &5311121587634951702
 GameObject:
   m_ObjectHideFlags: 0
