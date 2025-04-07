@@ -292,7 +292,7 @@ MonoBehaviour:
   wave: 5
   number: 180
   delay: 0.67
-  radius: 60
+  radius: 40
   enemyPrefab: {fileID: 2117215015767839618, guid: f1af8eeb91178d14e917f9e69a92998a, type: 3}
 --- !u!114 &-6346972619884045717
 MonoBehaviour:
@@ -657,7 +657,7 @@ MonoBehaviour:
   wave: 5
   number: 30
   delay: 4
-  radius: 60
+  radius: 40
   enemyPrefab: {fileID: 7554888202306409818, guid: 071d874872c9d0648a480cb248e99fbc, type: 3}
 --- !u!114 &-3037207188535556430
 MonoBehaviour:
@@ -674,7 +674,7 @@ MonoBehaviour:
   wave: 3
   number: 22
   delay: 5
-  radius: 60
+  radius: 40
   enemyPrefab: {fileID: 7554888202306409818, guid: 071d874872c9d0648a480cb248e99fbc, type: 3}
 --- !u!114 &-1890752527119629015
 MonoBehaviour:
@@ -691,7 +691,7 @@ MonoBehaviour:
   wave: 4
   number: 140
   delay: 0.85
-  radius: 60
+  radius: 50
   enemyPrefab: {fileID: 2117215015767839618, guid: f1af8eeb91178d14e917f9e69a92998a, type: 3}
 --- !u!114 &-393067119266014836
 MonoBehaviour:
@@ -761,8 +761,8 @@ MonoBehaviour:
   m_Name: EnemyWave
   m_EditorClassIdentifier: 
   wave: 1
-  number: 100
-  delay: 1.2
+  number: 90
+  delay: 1.3
   radius: 20
   enemyPrefab: {fileID: 2117215015767839618, guid: f1af8eeb91178d14e917f9e69a92998a, type: 3}
 --- !u!114 &5340935010246247429
@@ -780,7 +780,7 @@ MonoBehaviour:
   wave: 3
   number: 100
   delay: 1.2
-  radius: 60
+  radius: 40
   enemyPrefab: {fileID: 2117215015767839618, guid: f1af8eeb91178d14e917f9e69a92998a, type: 3}
 --- !u!114 &5607062912003625383
 MonoBehaviour:
@@ -829,7 +829,7 @@ MonoBehaviour:
   wave: 4
   number: 20
   delay: 6
-  radius: 60
+  radius: 50
   enemyPrefab: {fileID: 7554888202306409818, guid: 071d874872c9d0648a480cb248e99fbc, type: 3}
 --- !u!114 &8592819189072962363
 MonoBehaviour:

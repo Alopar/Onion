@@ -12,20 +12,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 83a6e0dfaa6f0b44ebe8eaf4b7074209, type: 3}
   m_Name: Walls Progress
   m_EditorClassIdentifier: 
-  ProtectWallDefaultHealth: 400
+  ProtectWallDefaultHealth: 450
   ProtectWallHealthIncrease: 50
-  ProtectWallDefaultReflectDamage: 0.3
-  ProtectWallReflectDamageDecrease: 0.02
+  ProtectWallDefaultReflectDamage: 0.15
+  ProtectWallReflectDamageDecrease: 0.012
   ProtectWallReflectDamageMin: 0.02
   ProtectWallCostDefault: 125
   ProtectWallCostIncrease: 100
-  ProtectWallDestroyDamageMultiplier: 0.5
+  ProtectWallDestroyDamageMultiplier: 0.572
   AttackWallDefaultHealth: 125
-  AttackWallHealthIncrease: 25
+  AttackWallHealthIncrease: 10
   AttackWallsWeaponsDefault: 1
   AttackWallsWeaponsIncrease: 1
   AttackWallsCooldownDefault: 0.75
-  AttackWallsCooldownIncrease: 0.4
+  AttackWallsCooldownIncrease: 0.7
   AttackWallsDamageDefault: 7.5
   AttackWallCostDefault: 300
   AttackWallCostIncrease: 450

@@ -49,7 +49,7 @@ namespace Gameplay
             _cooldownTimer = Time.time + _cooldown;
 
             if (_buildingHealth.TryGetComponent(out ProtectWall wall))
-                GetComponent<EnemyHealth>().DealDamage(wall.GetReflectDamage());
+                GetComponent<EnemyHealth>().DealDamage(_damage * wall.GetReflectDamage());
         }
         #endregion
     }

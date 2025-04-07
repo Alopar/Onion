@@ -305,7 +305,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _income: 75
-  _delay: 1.3
+  _delay: 1.5
 --- !u!114 &6083288080688921060
 MonoBehaviour:
   m_ObjectHideFlags: 0
