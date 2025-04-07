@@ -13,6 +13,8 @@ namespace Gameplay
         private float _healthCurrent;
         #endregion
 
+        public float MaxHealth => _healthMax;
+
         #region EVENTS
         public event Action<float, float> OnHealthChanged;
         public event Action OnDeath;
@@ -24,6 +26,12 @@ namespace Gameplay
             _healthCurrent = _healthMax;
         }
         #endregion
+
+        public void SetMaxHealth(float health)
+        {
+            _healthMax = health;
+            _healthCurrent = _healthMax;
+        }
 
         #region METHODS PUBLIC
         public void DealDamage(float damage)

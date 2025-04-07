@@ -208,7 +208,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5886450645514502032, guid: 0cec0a3c3fe0b12459fb022f7347fe68, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5949089547068732050, guid: 0cec0a3c3fe0b12459fb022f7347fe68, type: 3}
       propertyPath: m_SceneBindings.Array.data[3].value
@@ -832,6 +832,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -104170271605697184, guid: a1b8b3456867be145873f72f321b3e65, type: 3}
+      propertyPath: _income
+      value: 50
+      objectReference: {fileID: 0}
     - target: {fileID: 1287188878845800259, guid: a1b8b3456867be145873f72f321b3e65, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0

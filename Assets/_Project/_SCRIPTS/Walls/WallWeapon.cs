@@ -7,10 +7,16 @@ namespace Gameplay
         [SerializeField] private WallWeaponProjectile _weaponProjectilePrefab;
         [SerializeField] private Transform _firePoint;
         [SerializeField] private float _weaponRange;
-        [SerializeField] private float _damage;
-        [SerializeField] private float _cooldown;
+        private float _damage;
 
+        private float _cooldown;
         private float _cooldownTimer;
+
+        public void Init(int ring)
+        {
+            _cooldown = WallsManager.Instance.WallsProgress.AttackWallsCooldownDefault + ring * WallsManager.Instance.WallsProgress.AttackWallsCooldownIncrease;
+            _damage = WallsManager.Instance.WallsProgress.AttackWallsDamageDefault;
+        }
 
         public void Shoot(WallDirection direction)
         {
@@ -28,7 +34,7 @@ namespace Gameplay
         {
             Vector3 vectorDirection = WallsSettings.Instance.GetDirectionVector(direction);
             Vector3 angle = WallsSettings.Instance.GetWallAngle(direction);
-            RaycastHit2D[] hits = Physics2D.BoxCastAll(transform.position + vectorDirection.normalized * _weaponRange / 2, Vector2.one * _weaponRange, angle.z, vectorDirection, _weaponRange);
+            RaycastHit2D[] hits = Physics2D.BoxCastAll(transform.position + vectorDirection.normalized * _weaponRange / 2, Vector2.one * _weaponRange, angle.z, vectorDirection, _weaponRange, 3 << 3);
             Transform enemy = null;
             float closestDistance = 1000000;
 

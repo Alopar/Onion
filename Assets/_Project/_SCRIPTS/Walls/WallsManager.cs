@@ -57,10 +57,10 @@ namespace Gameplay
             wall.transform.SetParent(_wallsContainer);
             float nextWallDistance = GetNextWallDistance(direction);
             wall.transform.eulerAngles = WallsSettings.Instance.GetWallAngle(direction);
-            wall.Init(direction, _walls[direction].Count * 2 + (direction.IsCorner() ? 1 : 0), _wallsProgress);
+            wall.Init(direction, _walls[direction].Count * 2 + (direction.IsCorner() ? 1 : 0));
             wall.Draw(_wallSegments, _wallAngle, nextWallDistance);
             wall.UpdateCollider(_colliderSegments);
-            if (wall is AttackWall attackWall) attackWall.CreateWeapons(_wallAngle, nextWallDistance, _wallsProgress);
+            if (wall is AttackWall attackWall) attackWall.CreateWeapons(_wallAngle, nextWallDistance);
             _walls[direction].Add(wall);
             UpdateCreationPreviews();
             return (T)wall;
@@ -107,7 +107,7 @@ namespace Gameplay
             
             float nextWallDistance = GetNextWallDistance(direction);
             preview.transform.eulerAngles = WallsSettings.Instance.GetWallAngle(direction);
-            preview.Init(direction, _walls[direction].Count * 2 + (direction.IsCorner() ? 1 : 0), _wallsProgress);
+            preview.Init(direction, _walls[direction].Count * 2 + (direction.IsCorner() ? 1 : 0));
             preview.Draw(_wallSegments, _wallAngle, nextWallDistance);
             preview.UpdateCollider(_colliderSegments);
 
