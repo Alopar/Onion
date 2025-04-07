@@ -195,6 +195,7 @@ MonoBehaviour:
   _protectMaterial: {fileID: 2100000, guid: 7fe0b488224915a46b04e96b4bb2ae08, type: 2}
   _attackWallMaterial: {fileID: 2100000, guid: 4834c20ad1f6927438a3dc81803fdc9c, type: 2}
   _produceWallMaterial: {fileID: 2100000, guid: 5cbd77215d3d3714fbba4f787fc6ed4d, type: 2}
+  _noMoneySoundEffect: {fileID: 8300000, guid: cb332815a984d744fb0c799e5526b65b, type: 3}
 --- !u!68 &8925541906368289230
 EdgeCollider2D:
   m_ObjectHideFlags: 0

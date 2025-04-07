@@ -48,6 +48,11 @@ MonoBehaviour:
   _weaponProjectilePrefab: {fileID: 4155089616364676185, guid: aba1ca1cc5f910f4198f11459a5391fc, type: 3}
   _firePoint: {fileID: 5665081679139808962}
   _weaponRange: 6
+  _shootSoundEffects:
+  - {fileID: 8300000, guid: 63bb18c9b50fe0f489d66a8a9f057906, type: 3}
+  - {fileID: 8300000, guid: af3ba0722917b64448e23d07e138348b, type: 3}
+  - {fileID: 8300000, guid: d407f7583a3995141b3618c5231d67e2, type: 3}
+  - {fileID: 8300000, guid: c7f080a3a7b763d46b9c7b84d400c574, type: 3}
 --- !u!1 &5311121587634951702
 GameObject:
   m_ObjectHideFlags: 0

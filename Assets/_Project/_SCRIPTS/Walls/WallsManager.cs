@@ -21,6 +21,9 @@ namespace Gameplay
         [SerializeField] private float _wallAngle;
         [SerializeField] private int _colliderSegments;
 
+        [SerializeField] private AudioClip _buildSoundEffect;
+        [SerializeField] private AudioClip _destroySoundEffect;
+
         private Dictionary<WallDirection, List<Wall>> _walls = new();
         private Dictionary<WallDirection, WallPreview> _previews = new();
 
@@ -66,6 +69,7 @@ namespace Gameplay
             if (wall is AttackWall attackWall) attackWall.CreateWeapons(_wallAngle, wallRadius);
             _walls[direction].Add(wall);
             UpdateCreationPreviews();
+            SoundManager.Instance.PlaySound(_buildSoundEffect);
             return (T)wall;
         }
 
@@ -74,6 +78,7 @@ namespace Gameplay
             _walls[wall.WallDirection].Remove(wall);
             Destroy(wall.gameObject);
             UpdateCreationPreviews();
+            SoundManager.Instance.PlaySound(_destroySoundEffect);
         }
 
         private void InitWallsDictionary()

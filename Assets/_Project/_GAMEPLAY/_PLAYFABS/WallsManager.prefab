@@ -56,3 +56,5 @@ MonoBehaviour:
   _wallSegments: 20
   _wallAngle: 90
   _colliderSegments: 5
+  _buildSoundEffect: {fileID: 8300000, guid: 2945045df7e48f04db9884b36f1d272f, type: 3}
+  _destroySoundEffect: {fileID: 8300000, guid: f725b48e0138bed4aa3731032faf1d9e, type: 3}

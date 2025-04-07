@@ -8,6 +8,7 @@ namespace Gameplay
         [SerializeField] private Material _protectMaterial;
         [SerializeField] private Material _attackWallMaterial;
         [SerializeField] private Material _produceWallMaterial;
+        [SerializeField] private AudioClip _noMoneySoundEffect;
 
         private void OnMouseEnter()
         {
@@ -52,7 +53,11 @@ namespace Gameplay
 
             int cost = ResourcesManager.Instance.GetCost(wallToCreate, _wallRing);
 
-            if (!ResourcesManager.Instance.TryDecreaseEnergy(cost)) return;
+            if (!ResourcesManager.Instance.TryDecreaseEnergy(cost))
+            {
+                SoundManager.Instance.PlaySound(_noMoneySoundEffect);
+                return;
+            }
 
             if (wallToCreate == WallType.Attack)
                 WallsManager.Instance.CreateWall<AttackWall>(WallDirection);
