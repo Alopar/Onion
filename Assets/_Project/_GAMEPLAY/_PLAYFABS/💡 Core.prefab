@@ -257,7 +257,7 @@ GameObject:
   - component: {fileID: 6083288080688921060}
   - component: {fileID: 7418206323482728513}
   m_Layer: 0
-  m_Name: Core
+  m_Name: "\U0001F4A1 Core"
   m_TagString: BuildingSupport
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

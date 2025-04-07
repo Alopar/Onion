@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Events;
 
 namespace Gameplay
 {
@@ -7,6 +8,9 @@ namespace Gameplay
     {
         #region FIELDS INSPECTOR
         [SerializeField] private BuildingHealth _health;
+
+        [Space(10)]
+        [SerializeField] private UnityEvent _onDeath;
         #endregion
 
         #region UNITY CALLBACKS
@@ -24,6 +28,7 @@ namespace Gameplay
         #region METHODS PRIVATE
         private void OnDeath()
         {
+            _onDeath.Invoke();
             print("💥💥💥 CORE DESTROYED, GAME OVER! 💥💥💥");
         }
         #endregion
