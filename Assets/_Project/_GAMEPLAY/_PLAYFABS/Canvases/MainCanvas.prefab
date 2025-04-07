@@ -35,7 +35,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 127, y: -16}
-  m_SizeDelta: {x: 90, y: 90}
+  m_SizeDelta: {x: 80, y: 80}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &312261842631924335
 CanvasRenderer:
@@ -790,7 +790,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -1.7, y: -16}
-  m_SizeDelta: {x: 90, y: 90}
+  m_SizeDelta: {x: 80, y: 80}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2663731880586817782
 CanvasRenderer:
@@ -865,7 +865,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -125.25, y: -16}
-  m_SizeDelta: {x: 90, y: 90}
+  m_SizeDelta: {x: 80, y: 80}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4615873460300675179
 CanvasRenderer:
@@ -1001,9 +1001,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7c307d3c1d128724eafb2e97e5e7058b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _produceWallSelectedImage: {fileID: 3661717668444326828}
-  _attackWallSelectedImage: {fileID: 4263890789540674895}
-  _protectWallSelectedImage: {fileID: 8917517931102854466}
+  _produceWallImage: {fileID: 3661717668444326828}
+  _produceCost: {fileID: 777011824035834166}
+  _attackWallImage: {fileID: 4263890789540674895}
+  _attackCost: {fileID: 3232835920663822274}
+  _protectWallImage: {fileID: 8917517931102854466}
+  _protectCost: {fileID: 4996781412798610850}
+  _selectedSize: 1.3
 --- !u!1 &7938004895291975333
 GameObject:
   m_ObjectHideFlags: 0

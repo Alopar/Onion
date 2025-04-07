@@ -14,6 +14,7 @@ namespace Gameplay
         {
             _lineRenderer.startColor = new Color(1, 1, 1, 0.2f);
             _lineRenderer.endColor = new Color(1, 1, 1, 0.2f);
+            WallChoiseView.Instance.ShowCosts(_wallRing);
         }
 
         private void OnMouseOver()
@@ -45,6 +46,7 @@ namespace Gameplay
 
             _lineRenderer.startColor = new Color(1, 1, 1, 0.4f);
             _lineRenderer.endColor = new Color(1, 1, 1, 0.4f);
+            WallChoiseView.Instance.HideCosts();
         }
 
         private void OnMouseDown()
@@ -65,6 +67,8 @@ namespace Gameplay
                 WallsManager.Instance.CreateWall<ProtectWall>(WallDirection);
             if (wallToCreate == WallType.Produce)
                 WallsManager.Instance.CreateWall<ProduceWall>(WallDirection);
+
+            WallChoiseView.Instance.HideCosts();
         }
 
         protected override void Destroy() =>
